@@ -1,0 +1,7105 @@
+{
+  "run_id": "P-20261117T051242Z",
+  "kind": "paper-performance",
+  "category": "definitiva",
+  "profile": "full",
+  "custom": [],
+  "created_utc": "20261117T051245Z",
+  "status": "complete",
+  "config": {
+    "id": "artigo-sbseg2025",
+    "message_file": "message_90B.txt",
+    "key_bits": [
+      2048,
+      3072,
+      4096
+    ],
+    "iteration_sets": [
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "discard_sets": [
+      10
+    ],
+    "executions": 5,
+    "keygen_per_execution": 1,
+    "key_source": "openssl-genpkey",
+    "public_exponent": 65537,
+    "cpu_core": 1,
+    "warmup_ops": 0,
+    "timer": "monotonic-per-operation",
+    "library_order": "rotate",
+    "profile": "full",
+    "category": "definitiva",
+    "libraries": {
+      "c_openssl": {
+        "keygen_e": 65537,
+        "language": "C",
+        "name": "OpenSSL",
+        "padding": "pkcs1v15",
+        "code_padding": "PKCS#1 v1.5 (padrão do EVP_PKEY_encrypt)"
+      },
+      "c_libgcrypt": {
+        "keygen_e": 65537,
+        "language": "C",
+        "name": "Libgcrypt",
+        "padding": "oaep-sha1",
+        "code_padding": "raw (load/main.c) / pkcs1 (api/main.c)"
+      },
+      "cpp_botan": {
+        "keygen_e": 65537,
+        "language": "C++",
+        "name": "Botan",
+        "padding": "oaep-sha256",
+        "code_padding": "OAEP(SHA-256)"
+      },
+      "cpp_cryptopp": {
+        "keygen_e": 17,
+        "language": "C++",
+        "name": "Crypto++",
+        "padding": "oaep-sha1",
+        "code_padding": "RSAES_OAEP_SHA (SHA-1)"
+      },
+      "java_bouncycastle": {
+        "keygen_e": 65537,
+        "language": "Java",
+        "name": "Bouncy Castle",
+        "padding": "raw",
+        "code_padding": "RSAEngine sem preenchimento"
+      },
+      "java_jca": {
+        "keygen_e": 65537,
+        "language": "Java",
+        "name": "Java Crypto",
+        "padding": "pkcs1v15",
+        "code_padding": "Cipher.getInstance(\"RSA\") = RSA/ECB/PKCS1Padding"
+      },
+      "js_crypto": {
+        "keygen_e": 65537,
+        "language": "JavaScript",
+        "name": "Crypto",
+        "padding": "oaep-sha1",
+        "code_padding": "crypto.publicEncrypt padrão (OAEP, SHA-1)"
+      },
+      "js_forge": {
+        "keygen_e": 65537,
+        "language": "JavaScript",
+        "name": "Forge",
+        "padding": "oaep-sha256",
+        "code_padding": "RSA-OAEP, md SHA-256 (MGF1 SHA-256 por padrão)"
+      },
+      "py_cryptography": {
+        "keygen_e": 65537,
+        "language": "Python",
+        "name": "Cryptography",
+        "padding": "oaep-sha256",
+        "code_padding": "OAEP SHA-256, MGF1 SHA-256"
+      },
+      "py_pycryptodome": {
+        "keygen_e": 65537,
+        "language": "Python",
+        "name": "PyCryptodome",
+        "padding": "oaep-sha1",
+        "code_padding": "PKCS1_OAEP padrão (SHA-1)"
+      },
+      "rust_openssl": {
+        "keygen_e": 65537,
+        "language": "Rust",
+        "name": "Rust OpenSSL",
+        "padding": "pkcs1v15",
+        "code_padding": "Padding::PKCS1"
+      },
+      "rust_rustcrypto": {
+        "keygen_e": 65537,
+        "language": "Rust",
+        "name": "Rust Crypto",
+        "padding": "pkcs1v15",
+        "code_padding": "Pkcs1v15Encrypt"
+      }
+    },
+    "variants": {
+      "c_libgcrypt_raw": {
+        "base": "c_libgcrypt",
+        "padding": "raw",
+        "reason": "o código dos autores (load/main.c) cifra com (flags raw), sem preenchimento, o que diverge do preenchimento declarado na Tabela 2 do artigo"
+      }
+    },
+    "message_path": "<RAIZ_DO_PROJETO>/paper_repro/protocol/message_90B.txt",
+    "plan_version": 2,
+    "pin": true
+  },
+  "config_id": "1fbf1a35326c",
+  "message_sha256": "483e08d3c08761f73f6d1cf41d7950e9439c2e96b89ca0a62ce9e40cd5daa640",
+  "keys": {
+    "generator": "openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:<B>; openssl rsa -pubout",
+    "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "keys": [
+      {
+        "bits": 2048,
+        "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/2048",
+        "public_exponent": 65537,
+        "modulus_sha256": "2a02a094a24757ff692fab2783010fd50819a4394bdfc67201dd6372916c570e",
+        "files_sha256": {
+          "private.der": "3ca1d425bf6c4a37cac4ccda64e7aba9fea4340185727f365ef770c72b1b2ff2",
+          "private.pem": "5f2b1c394c8a948b8bf56f7a83292a77ec269e21db308c6ca4d80c51c698b6cf",
+          "private.sexp": "7d8e7b56725416d4ff14dc08a59ddc06f5a3f6ff22ca2aa70efe44eb13500b7a",
+          "public.der": "2b247f2dc1da3d300303766af560a1be5d493c485f17402007dc738c34d5cdb4",
+          "public.pem": "f9cc755f176eb15ba3161dbc7b2aba3c5642d5b2d7af520cd14b811486159bcd",
+          "public.sexp": "7a883d348fe4bb4807390c3fabdb78a9fea53eb87a3cd3cc145717e42ed86874"
+        }
+      },
+      {
+        "bits": 3072,
+        "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/3072",
+        "public_exponent": 65537,
+        "modulus_sha256": "ddcb5946255bed1c2347179e3cef9c6775d456ca39e62db3106ec94f8b8d40e3",
+        "files_sha256": {
+          "private.der": "a10ba125af04452f3067a2be47b631540225cdb5a201f89b01338272315a6628",
+          "private.pem": "107aa4af6c3d54a049e76fe2e4d899ae66c7e30933ed4c30dce1375fbc2613d0",
+          "private.sexp": "db2ffe382dd0c8c317fbf58f593754f91d4536bc80f0b306b69fe19733a6e3d8",
+          "public.der": "ffcaf975e362f715913c14b29e99da32ca118299322ad1d0aafeec1e597aafd6",
+          "public.pem": "76d143b8973398c63a2355e70980ac12724b04d422f43fd61d9a57109800e3c9",
+          "public.sexp": "5ec6f305cc9a96cd8913526bb12a81ded47593253662726190cdd18055f04740"
+        }
+      },
+      {
+        "bits": 4096,
+        "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/4096",
+        "public_exponent": 65537,
+        "modulus_sha256": "f37570b60eb862925f0a509dc99c0d06bebab1ae5c65b05165ab85fa58ebafe1",
+        "files_sha256": {
+          "private.der": "950476e6c59f3cebf03ff4ed621647e6cd9c54035f461beb89244bb369cffbd6",
+          "private.pem": "687287e3f4bdbe79e119679d77342fd9bfb5d508217ac829c5e43482d80b6e8f",
+          "private.sexp": "58322fe638b7562e4134444494d59dbdfac4c552b6950ab927f46fc7c0ccf00b",
+          "public.der": "dbcc5f8d4f8c9bb1c2e902c8f385cd860bc9fccc3e2d2aced3dc9d4ec016b0ac",
+          "public.pem": "51048ef9b23e75aa8e82bf4035cb5b17818d99d1dc78413ca496c0d314192a21",
+          "public.sexp": "53121e2561de12e9faddca5224c8b6b26695d656f2ce9741feefddf8e90b85d5"
+        }
+      }
+    ]
+  },
+  "environment": {
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "5.15.167.4-microsoft-standard-WSL2",
+    "machine": "x86_64",
+    "cpu": "AMD Ryzen 7 4800HS with Radeon Graphics",
+    "cpus": 16,
+    "memory": "MemTotal:        7833936 kB",
+    "wsl": true,
+    "cpu_governor": "indisponível",
+    "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "javac": "javac 11.0.33",
+    "java": "openjdk version \"11.0.33\" 2026-10-20",
+    "node": "v20.19.0",
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "python": "3.12.3",
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "pkg-config": {
+      "openssl": "3.0.13",
+      "libgcrypt": "1.10.3",
+      "botan-2": "2.19.3",
+      "libcrypto++": "8.9"
+    },
+    "taskset": "/usr/bin/taskset",
+    "gcore": "/usr/bin/gcore",
+    "vendor_lock": "nodejs 20.19.0 34bc6627675906f8431892630b5e91fc4cc9f1e03ce15e9716025aa551e5c823 (binário; tarball conferido com SHASUMS256.txt)\nnode-forge 1.3.1 sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA== (tarball; conferido com dist.integrity do npm)\nbcprov-jdk18on 1.79 0d81ecc3124536b539bce9aa3fe9621b7f84c9cee371b635a5b31c78b79ab1da (conferido com .sha1 do Maven Central)\npycryptodome 3.21.0 3.21.0 (pip)\n"
+  },
+  "implementations": {
+    "c_openssl": {
+      "id": "c_openssl",
+      "language": "C",
+      "library": "OpenSSL",
+      "library_version": "OpenSSL 3.0.13 30 Jan 2024",
+      "runtime": "gcc 13.3.0",
+      "padding": "pkcs1v15"
+    },
+    "c_libgcrypt": {
+      "id": "c_libgcrypt",
+      "language": "C",
+      "library": "Libgcrypt",
+      "library_version": "1.10.3",
+      "runtime": "gcc 13.3.0",
+      "padding": "oaep-sha1"
+    },
+    "cpp_botan": {
+      "id": "cpp_botan",
+      "language": "C++",
+      "library": "Botan",
+      "library_version": "2.19.3",
+      "runtime": "g++ 13.3.0",
+      "padding": "oaep-sha256"
+    },
+    "cpp_cryptopp": {
+      "id": "cpp_cryptopp",
+      "language": "C++",
+      "library": "Crypto++",
+      "library_version": "8.9.0",
+      "runtime": "g++ 13.3.0",
+      "padding": "oaep-sha1",
+      "keygen_public_exponent": 17
+    },
+    "java_bouncycastle": {
+      "id": "java_bouncycastle",
+      "language": "Java",
+      "library": "Bouncy Castle",
+      "library_version": "1.79",
+      "runtime": "OpenJDK 64-Bit Server VM 11.0.33",
+      "padding": "raw"
+    },
+    "java_jca": {
+      "id": "java_jca",
+      "language": "Java",
+      "library": "Java Crypto",
+      "library_version": "11.0.33 (SunJCE)",
+      "runtime": "OpenJDK 64-Bit Server VM 11.0.33",
+      "padding": "pkcs1v15",
+      "transformation": "RSA"
+    },
+    "js_crypto": {
+      "id": "js_crypto",
+      "language": "JavaScript",
+      "library": "Crypto",
+      "library_version": "node 20.19.0 / OpenSSL 3.0.15+quic",
+      "runtime": "node v20.19.0",
+      "padding": "oaep-sha1"
+    },
+    "js_forge": {
+      "id": "js_forge",
+      "language": "JavaScript",
+      "library": "Forge",
+      "library_version": "node-forge 1.3.1",
+      "runtime": "node v20.19.0",
+      "padding": "oaep-sha256",
+      "keygen_delegates_to": "node:crypto.generateKeyPair"
+    },
+    "py_cryptography": {
+      "id": "py_cryptography",
+      "language": "Python",
+      "library": "Cryptography",
+      "library_version": "50.0.1 (OpenSSL 3.0.13 30 Jan 2024)",
+      "runtime": "CPython 3.12.3",
+      "padding": "oaep-sha256"
+    },
+    "py_pycryptodome": {
+      "id": "py_pycryptodome",
+      "language": "Python",
+      "library": "PyCryptodome",
+      "library_version": "3.21.0",
+      "runtime": "CPython 3.12.3",
+      "padding": "oaep-sha1"
+    },
+    "rust_openssl": {
+      "id": "rust_openssl",
+      "language": "Rust",
+      "library": "Rust OpenSSL",
+      "library_version": "openssl crate 0.10.81 (OpenSSL 3.0.13 30 Jan 2024)",
+      "runtime": "rustc",
+      "padding": "pkcs1v15"
+    },
+    "rust_rustcrypto": {
+      "id": "rust_rustcrypto",
+      "language": "Rust",
+      "library": "Rust Crypto",
+      "library_version": "rsa 0.9.7",
+      "runtime": "rustc",
+      "padding": "pkcs1v15"
+    }
+  },
+  "binaries_sha256": {
+    "build/c_openssl": "f1fce70dcf0139a89a4f0299cfed74ce6198a7bd9a129c1aa3a6936ab65e26ce",
+    "build/c_libgcrypt": "dcaff1cd1c55ae38482a91fab2c5447e9148ebeb832a6097fe05798056793359",
+    "build/cpp_botan": "661015efba9da2b37456b79c9acc0eb735994db394685387d6409dd0468c12cc",
+    "build/cpp_cryptopp": "a79cbf777ceecbf69cc9bc76105128d972a7b890630dcf07c1dce12bd9028dc2",
+    "build/rusage_exec": "1387be649cd24a45a6d0298e24d6f847d76796482164e0d92f55cd7dec6ed725",
+    "build/rust/release/rust_openssl": "d9829facb366c6ec716612af1f6cb864ac5104223bf33e568a97241eda54e86c",
+    "build/rust/release/rust_rustcrypto": "0129e5d1e341d49f76da5c880ae80ddcb871b27f05c7160deee8ce8bbcaf580b",
+    "vendor/bcprov-jdk18on-1.79.jar": "0d81ecc3124536b539bce9aa3fe9621b7f84c9cee371b635a5b31c78b79ab1da",
+    "vendor/node-v20.19.0-linux-x64/bin/node": "34bc6627675906f8431892630b5e91fc4cc9f1e03ce15e9716025aa551e5c823",
+    "build/java/paper/BouncyCastleBench.class": "a78f2e004f1898b8ead594bc53f8f13c43b45e0a9b35669e21b77d9aee292bd6",
+    "build/java/paper/Harness.class": "a13e21ea704873739f595aaac2ca61e0ccf32e4ae976250bbde44a31a49163f7",
+    "build/java/paper/JcaBench.class": "6d707aa6fc514d00f1352a64b957889e344fee91f90846471efa52e5b68f7da2"
+  },
+  "sources_sha256": {
+    "implementations/c_libgcrypt/bench.c": "0620e96d95164e011b54287e1e29b673caa5ec09754d5f9f215e886c6832e27e",
+    "implementations/c_openssl/bench.c": "abddbc3eea49f5cd72042fbcc7ce7aaf7f5cb0207f457055673bd8f069bd1448",
+    "implementations/common/harness.h": "dfd43788932aa02ee223cf2f9dc789e4584cec7b922b9bd8421712435f514862",
+    "implementations/cpp_botan/bench.cpp": "9b872c5cdc526c880d6e8a3ea337a42acd789e6c99a4fb69580d0655e347c73e",
+    "implementations/cpp_cryptopp/bench.cpp": "7c0121542c78fc64a59dab5b193bee5a5ecfa0d07d64cea5be1133419db4a993",
+    "implementations/java/src/paper/BouncyCastleBench.java": "8a6b90e79cb91c3434022cd624dc06a8746b2bb5b7d2fc6ca5e0abf83e3f4c65",
+    "implementations/java/src/paper/Harness.java": "330e171cc4ac4f3e9bc5aa43e681da5afd05f5855f687bf544435d5451fdddb3",
+    "implementations/java/src/paper/JcaBench.java": "d3fd0e551dc7c1fd97e47cc14b03dfd86d625138ebe83db67e1d48ad6ea4e0f8",
+    "implementations/js/crypto_bench.js": "4d6a5a1784775ca45accaff3fe7164a6fcf990449a7a1f6a685d1ca32d886bb8",
+    "implementations/js/forge_bench.js": "6e4daed9e68b7bc596d5c9383eae56343c47ae5e1dd026222cd94cf63f4c7649",
+    "implementations/js/harness.js": "7e3dd91f54137a7e4cdfe40a3b4a2d9df533f9961a62c7e78c2216a8cbc66b84",
+    "implementations/python/cryptography_bench.py": "f035de78216054890c7eeccfd15758024fd213cfab4f7ed6cd0ed4171b96ea0d",
+    "implementations/python/harness.py": "5653c1618468737218a0c50b52d9fdd2492ecfb58988c3d31b77595dad071bd2",
+    "implementations/python/pycryptodome_bench.py": "e973d9161e732224b204e67fb6fbdaf24fbb1debd36f82446c737ab3b08fcc5b",
+    "implementations/rust/Cargo.lock": "7e5da9997457bbdf108678cb20e745bddbaaf8b875b7b78d7511c98546306fd4",
+    "implementations/rust/Cargo.toml": "582b2771b36fe4f4095736c648224d514ac79b9675fca9612fc31d37f163eeac",
+    "implementations/rust/src/bin/rust_openssl.rs": "7290f22ad98cd416c19a0ba7ed19093d0299f7258631352342ef191bce94d4ee",
+    "implementations/rust/src/bin/rust_rustcrypto.rs": "17a2e96018697cac4b6d773c239fc189083de76e3ef51202c9f42ab420c6300b",
+    "implementations/rust/src/harness.rs": "d37896536f777a2959c2322b8c0d54f83cd16d0e517f5dae0200e6a2c571a4ef",
+    "tools/rusage_exec.c": "5036b06d22f5ea476df170913e0942d2fdc9662c8875d343d93838b2948c2cdf",
+    "protocol/protocol.toml": "5afafd8ade96b011a8719924d4187c56a02735a50919c28245cd7d3786140a9d",
+    "protocol/message_90B.txt": "483e08d3c08761f73f6d1cf41d7950e9439c2e96b89ca0a62ce9e40cd5daa640"
+  },
+  "plan": [
+    {
+      "unit": "kg_e01_2048_c_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_cpp_botan",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_java_jca",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_js_crypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_js_forge",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_py_cryptography",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_rust_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_2048_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_c_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_cpp_botan",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_java_jca",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_js_crypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_js_forge",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_py_cryptography",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_rust_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_3072_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_c_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_cpp_botan",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_java_jca",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_js_crypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_js_forge",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_py_cryptography",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_rust_openssl",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e01_4096_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 1,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_c_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_cpp_botan",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_java_jca",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_js_crypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_js_forge",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_py_cryptography",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_rust_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_2048_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 2048,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e01_3072_c_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_cpp_botan",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_java_jca",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_js_crypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_js_forge",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_py_cryptography",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_rust_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_3072_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 3072,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e01_4096_c_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_cpp_botan",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_java_jca",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_js_crypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_js_forge",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_py_cryptography",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_rust_openssl",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e01_4096_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 1,
+      "bits": 4096,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "kg_e02_2048_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_cpp_botan",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_java_jca",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_js_crypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_js_forge",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_py_cryptography",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_rust_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_2048_c_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_cpp_botan",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_java_jca",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_js_crypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_js_forge",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_py_cryptography",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_rust_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_3072_c_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_cpp_botan",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_java_jca",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_js_crypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_js_forge",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_py_cryptography",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_rust_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e02_4096_c_openssl",
+      "kind": "keygen",
+      "execution": 2,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_cpp_botan",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_java_jca",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_js_crypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_js_forge",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_py_cryptography",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_rust_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_2048_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e02_2048_c_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_cpp_botan",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_java_jca",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_js_crypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_js_forge",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_py_cryptography",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_rust_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_3072_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e02_3072_c_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_cpp_botan",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_java_jca",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_js_crypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_js_forge",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_py_cryptography",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_rust_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e02_4096_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e02_4096_c_openssl",
+      "kind": "encdec",
+      "execution": 2,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_cpp_botan",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_java_jca",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_js_crypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_js_forge",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_py_cryptography",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_rust_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_c_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_2048_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_cpp_botan",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_java_jca",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_js_crypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_js_forge",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_py_cryptography",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_rust_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_c_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_3072_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_cpp_botan",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_java_jca",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_js_crypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_js_forge",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_py_cryptography",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_rust_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_c_openssl",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e03_4096_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 3,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_cpp_botan",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_java_jca",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_js_crypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_js_forge",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_py_cryptography",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_rust_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e03_2048_c_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_2048_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_cpp_botan",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_java_jca",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_js_crypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_js_forge",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_py_cryptography",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_rust_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e03_3072_c_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_3072_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_cpp_botan",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_java_jca",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_js_crypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_js_forge",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_py_cryptography",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_rust_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e03_4096_c_openssl",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e03_4096_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 3,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_java_jca",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_js_crypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_js_forge",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_py_cryptography",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_rust_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_c_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_2048_cpp_botan",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_java_jca",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_js_crypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_js_forge",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_py_cryptography",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_rust_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_c_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_3072_cpp_botan",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_java_jca",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_js_crypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_js_forge",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_py_cryptography",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_rust_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_c_openssl",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e04_4096_cpp_botan",
+      "kind": "keygen",
+      "execution": 4,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_java_jca",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_js_crypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_js_forge",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_py_cryptography",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_rust_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e04_2048_c_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_2048_cpp_botan",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_java_jca",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_js_crypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_js_forge",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_py_cryptography",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_rust_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e04_3072_c_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_3072_cpp_botan",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_java_jca",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_js_crypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_js_forge",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_py_cryptography",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_rust_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e04_4096_c_openssl",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e04_4096_cpp_botan",
+      "kind": "encdec",
+      "execution": 4,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_java_jca",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_js_crypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_js_forge",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_py_cryptography",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_rust_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_c_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_cpp_botan",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_2048_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_java_jca",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_js_crypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_js_forge",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_py_cryptography",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_rust_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_c_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_cpp_botan",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_3072_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_java_bouncycastle",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_java_jca",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_js_crypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_js_forge",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_py_cryptography",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_py_pycryptodome",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_rust_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_rust_rustcrypto",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_c_openssl",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_c_libgcrypt",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_cpp_botan",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "kg_e05_4096_cpp_cryptopp",
+      "kind": "keygen",
+      "execution": 5,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_java_jca",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_js_crypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_js_forge",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_py_cryptography",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_rust_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e05_2048_c_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_cpp_botan",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_2048_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 2048,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_java_jca",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_js_crypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_js_forge",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_py_cryptography",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_rust_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e05_3072_c_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_cpp_botan",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_3072_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 3072,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_java_bouncycastle",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "java_bouncycastle",
+      "lib": "java_bouncycastle",
+      "padding": "raw",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_java_jca",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "java_jca",
+      "lib": "java_jca",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_js_crypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "js_crypto",
+      "lib": "js_crypto",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_js_forge",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "js_forge",
+      "lib": "js_forge",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_py_cryptography",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "py_cryptography",
+      "lib": "py_cryptography",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_py_pycryptodome",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "py_pycryptodome",
+      "lib": "py_pycryptodome",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_rust_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "rust_openssl",
+      "lib": "rust_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_rust_rustcrypto",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "rust_rustcrypto",
+      "lib": "rust_rustcrypto",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_c_libgcrypt_raw",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "c_libgcrypt_raw",
+      "lib": "c_libgcrypt",
+      "padding": "raw",
+      "variant": true,
+      "padding_arg": "raw"
+    },
+    {
+      "unit": "ed_e05_4096_c_openssl",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "c_openssl",
+      "lib": "c_openssl",
+      "padding": "pkcs1v15",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_c_libgcrypt",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "c_libgcrypt",
+      "lib": "c_libgcrypt",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_cpp_botan",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "cpp_botan",
+      "lib": "cpp_botan",
+      "padding": "oaep-sha256",
+      "variant": false,
+      "padding_arg": null
+    },
+    {
+      "unit": "ed_e05_4096_cpp_cryptopp",
+      "kind": "encdec",
+      "execution": 5,
+      "bits": 4096,
+      "name": "cpp_cryptopp",
+      "lib": "cpp_cryptopp",
+      "padding": "oaep-sha1",
+      "variant": false,
+      "padding_arg": null
+    }
+  ],
+  "units_done": {
+    "kg_e01_2048_c_openssl": {
+      "seconds": 0.103,
+      "finished_utc": "20261117T051246Z",
+      "max_rss_kb": 5768,
+      "user_cpu_s": 0.104,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_2048_c_libgcrypt": {
+      "seconds": 0.102,
+      "finished_utc": "20261117T051246Z",
+      "max_rss_kb": 3340,
+      "user_cpu_s": 0.102,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_2048_cpp_botan": {
+      "seconds": 0.06,
+      "finished_utc": "20261117T051246Z",
+      "max_rss_kb": 10068,
+      "user_cpu_s": 0.049,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_2048_cpp_cryptopp": {
+      "seconds": 0.028,
+      "finished_utc": "20261117T051246Z",
+      "max_rss_kb": 7340,
+      "user_cpu_s": 0.026,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_2048_java_bouncycastle": {
+      "seconds": 1.269,
+      "finished_utc": "20261117T051248Z",
+      "max_rss_kb": 98412,
+      "user_cpu_s": 1.204,
+      "sys_cpu_s": 0.071
+    },
+    "kg_e01_2048_java_jca": {
+      "seconds": 0.634,
+      "finished_utc": "20261117T051248Z",
+      "max_rss_kb": 68712,
+      "user_cpu_s": 0.584,
+      "sys_cpu_s": 0.031
+    },
+    "kg_e01_2048_js_crypto": {
+      "seconds": 0.332,
+      "finished_utc": "20261117T051249Z",
+      "max_rss_kb": 43876,
+      "user_cpu_s": 0.324,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_2048_js_forge": {
+      "seconds": 0.418,
+      "finished_utc": "20261117T051249Z",
+      "max_rss_kb": 53044,
+      "user_cpu_s": 0.382,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e01_2048_py_cryptography": {
+      "seconds": 0.321,
+      "finished_utc": "20261117T051249Z",
+      "max_rss_kb": 23176,
+      "user_cpu_s": 0.305,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e01_2048_py_pycryptodome": {
+      "seconds": 0.201,
+      "finished_utc": "20261117T051250Z",
+      "max_rss_kb": 19756,
+      "user_cpu_s": 0.171,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e01_2048_rust_openssl": {
+      "seconds": 0.275,
+      "finished_utc": "20261117T051250Z",
+      "max_rss_kb": 6332,
+      "user_cpu_s": 0.271,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_2048_rust_rustcrypto": {
+      "seconds": 0.092,
+      "finished_utc": "20261117T051250Z",
+      "max_rss_kb": 2976,
+      "user_cpu_s": 0.092,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_c_openssl": {
+      "seconds": 0.949,
+      "finished_utc": "20261117T051251Z",
+      "max_rss_kb": 5944,
+      "user_cpu_s": 0.965,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_c_libgcrypt": {
+      "seconds": 0.421,
+      "finished_utc": "20261117T051251Z",
+      "max_rss_kb": 3356,
+      "user_cpu_s": 0.427,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_cpp_botan": {
+      "seconds": 0.357,
+      "finished_utc": "20261117T051252Z",
+      "max_rss_kb": 10060,
+      "user_cpu_s": 0.353,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_3072_cpp_cryptopp": {
+      "seconds": 0.081,
+      "finished_utc": "20261117T051252Z",
+      "max_rss_kb": 7288,
+      "user_cpu_s": 0.08,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_java_bouncycastle": {
+      "seconds": 2.413,
+      "finished_utc": "20261117T051254Z",
+      "max_rss_kb": 110044,
+      "user_cpu_s": 2.319,
+      "sys_cpu_s": 0.123
+    },
+    "kg_e01_3072_java_jca": {
+      "seconds": 0.886,
+      "finished_utc": "20261117T051255Z",
+      "max_rss_kb": 80560,
+      "user_cpu_s": 0.844,
+      "sys_cpu_s": 0.031
+    },
+    "kg_e01_3072_js_crypto": {
+      "seconds": 0.461,
+      "finished_utc": "20261117T051256Z",
+      "max_rss_kb": 43772,
+      "user_cpu_s": 0.465,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_js_forge": {
+      "seconds": 0.544,
+      "finished_utc": "20261117T051256Z",
+      "max_rss_kb": 51072,
+      "user_cpu_s": 0.51,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e01_3072_py_cryptography": {
+      "seconds": 0.388,
+      "finished_utc": "20261117T051257Z",
+      "max_rss_kb": 22976,
+      "user_cpu_s": 0.346,
+      "sys_cpu_s": 0.039
+    },
+    "kg_e01_3072_py_pycryptodome": {
+      "seconds": 0.578,
+      "finished_utc": "20261117T051257Z",
+      "max_rss_kb": 19700,
+      "user_cpu_s": 0.577,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_3072_rust_openssl": {
+      "seconds": 0.432,
+      "finished_utc": "20261117T051258Z",
+      "max_rss_kb": 6336,
+      "user_cpu_s": 0.439,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_3072_rust_rustcrypto": {
+      "seconds": 0.345,
+      "finished_utc": "20261117T051258Z",
+      "max_rss_kb": 2992,
+      "user_cpu_s": 0.349,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_4096_c_openssl": {
+      "seconds": 0.693,
+      "finished_utc": "20261117T051259Z",
+      "max_rss_kb": 5996,
+      "user_cpu_s": 0.704,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_4096_c_libgcrypt": {
+      "seconds": 1.198,
+      "finished_utc": "20261117T051300Z",
+      "max_rss_kb": 3336,
+      "user_cpu_s": 1.219,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_4096_cpp_botan": {
+      "seconds": 0.643,
+      "finished_utc": "20261117T051300Z",
+      "max_rss_kb": 10104,
+      "user_cpu_s": 0.654,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_4096_cpp_cryptopp": {
+      "seconds": 0.19,
+      "finished_utc": "20261117T051301Z",
+      "max_rss_kb": 7032,
+      "user_cpu_s": 0.182,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_4096_java_bouncycastle": {
+      "seconds": 5.057,
+      "finished_utc": "20261117T051306Z",
+      "max_rss_kb": 106196,
+      "user_cpu_s": 4.996,
+      "sys_cpu_s": 0.132
+    },
+    "kg_e01_4096_java_jca": {
+      "seconds": 1.31,
+      "finished_utc": "20261117T051307Z",
+      "max_rss_kb": 83580,
+      "user_cpu_s": 1.268,
+      "sys_cpu_s": 0.051
+    },
+    "kg_e01_4096_js_crypto": {
+      "seconds": 3.531,
+      "finished_utc": "20261117T051311Z",
+      "max_rss_kb": 43944,
+      "user_cpu_s": 3.574,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_4096_js_forge": {
+      "seconds": 0.426,
+      "finished_utc": "20261117T051311Z",
+      "max_rss_kb": 51296,
+      "user_cpu_s": 0.4,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e01_4096_py_cryptography": {
+      "seconds": 0.779,
+      "finished_utc": "20261117T051312Z",
+      "max_rss_kb": 23132,
+      "user_cpu_s": 0.781,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e01_4096_py_pycryptodome": {
+      "seconds": 10.902,
+      "finished_utc": "20261117T051323Z",
+      "max_rss_kb": 19660,
+      "user_cpu_s": 11.028,
+      "sys_cpu_s": 0.071
+    },
+    "kg_e01_4096_rust_openssl": {
+      "seconds": 1.1,
+      "finished_utc": "20261117T051324Z",
+      "max_rss_kb": 6324,
+      "user_cpu_s": 1.119,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e01_4096_rust_rustcrypto": {
+      "seconds": 0.536,
+      "finished_utc": "20261117T051325Z",
+      "max_rss_kb": 3004,
+      "user_cpu_s": 0.544,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_2048_c_openssl": {
+      "seconds": 5.746,
+      "finished_utc": "20261117T051331Z",
+      "max_rss_kb": 6204,
+      "user_cpu_s": 5.841,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e01_2048_c_libgcrypt": {
+      "seconds": 55.672,
+      "finished_utc": "20261117T051428Z",
+      "max_rss_kb": 3296,
+      "user_cpu_s": 56.67,
+      "sys_cpu_s": 0.031
+    },
+    "ed_e01_2048_cpp_botan": {
+      "seconds": 12.274,
+      "finished_utc": "20261117T051440Z",
+      "max_rss_kb": 11540,
+      "user_cpu_s": 12.411,
+      "sys_cpu_s": 0.092
+    },
+    "ed_e01_2048_cpp_cryptopp": {
+      "seconds": 9.85,
+      "finished_utc": "20261117T051450Z",
+      "max_rss_kb": 7252,
+      "user_cpu_s": 9.96,
+      "sys_cpu_s": 0.071
+    },
+    "ed_e01_2048_java_bouncycastle": {
+      "seconds": 13.24,
+      "finished_utc": "20261117T051504Z",
+      "max_rss_kb": 121224,
+      "user_cpu_s": 13.342,
+      "sys_cpu_s": 0.132
+    },
+    "ed_e01_2048_java_jca": {
+      "seconds": 11.624,
+      "finished_utc": "20261117T051515Z",
+      "max_rss_kb": 113484,
+      "user_cpu_s": 11.779,
+      "sys_cpu_s": 0.051
+    },
+    "ed_e01_2048_js_crypto": {
+      "seconds": 15.157,
+      "finished_utc": "20261117T051531Z",
+      "max_rss_kb": 55044,
+      "user_cpu_s": 15.351,
+      "sys_cpu_s": 0.061
+    },
+    "ed_e01_2048_js_forge": {
+      "seconds": 269.459,
+      "finished_utc": "20261117T052005Z",
+      "max_rss_kb": 115484,
+      "user_cpu_s": 274.231,
+      "sys_cpu_s": 0.163
+    },
+    "ed_e01_2048_py_cryptography": {
+      "seconds": 6.07,
+      "finished_utc": "20261117T052012Z",
+      "max_rss_kb": 24492,
+      "user_cpu_s": 6.131,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e01_2048_py_pycryptodome": {
+      "seconds": 16.658,
+      "finished_utc": "20261117T052028Z",
+      "max_rss_kb": 20812,
+      "user_cpu_s": 17.016,
+      "sys_cpu_s": 0.041
+    },
+    "ed_e01_2048_rust_openssl": {
+      "seconds": 5.697,
+      "finished_utc": "20261117T052034Z",
+      "max_rss_kb": 6720,
+      "user_cpu_s": 5.778,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_2048_rust_rustcrypto": {
+      "seconds": 16.515,
+      "finished_utc": "20261117T052051Z",
+      "max_rss_kb": 3260,
+      "user_cpu_s": 16.783,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_2048_c_libgcrypt_raw": {
+      "seconds": 54.956,
+      "finished_utc": "20261117T052147Z",
+      "max_rss_kb": 3324,
+      "user_cpu_s": 55.993,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e01_3072_c_openssl": {
+      "seconds": 16.709,
+      "finished_utc": "20261117T052204Z",
+      "max_rss_kb": 6352,
+      "user_cpu_s": 17.189,
+      "sys_cpu_s": 0.021
+    },
+    "ed_e01_3072_c_libgcrypt": {
+      "seconds": 136.246,
+      "finished_utc": "20261117T052423Z",
+      "max_rss_kb": 3304,
+      "user_cpu_s": 138.913,
+      "sys_cpu_s": 0.123
+    },
+    "ed_e01_3072_cpp_botan": {
+      "seconds": 32.653,
+      "finished_utc": "20261117T052456Z",
+      "max_rss_kb": 11464,
+      "user_cpu_s": 33.124,
+      "sys_cpu_s": 0.225
+    },
+    "ed_e01_3072_cpp_cryptopp": {
+      "seconds": 45.807,
+      "finished_utc": "20261117T052543Z",
+      "max_rss_kb": 7348,
+      "user_cpu_s": 46.714,
+      "sys_cpu_s": 0.082
+    },
+    "ed_e01_3072_java_bouncycastle": {
+      "seconds": 34.696,
+      "finished_utc": "20261117T052619Z",
+      "max_rss_kb": 117100,
+      "user_cpu_s": 35.188,
+      "sys_cpu_s": 0.132
+    },
+    "ed_e01_3072_java_jca": {
+      "seconds": 33.979,
+      "finished_utc": "20261117T052653Z",
+      "max_rss_kb": 145716,
+      "user_cpu_s": 34.562,
+      "sys_cpu_s": 0.092
+    },
+    "ed_e01_3072_js_crypto": {
+      "seconds": 29.481,
+      "finished_utc": "20261117T052724Z",
+      "max_rss_kb": 54824,
+      "user_cpu_s": 30.028,
+      "sys_cpu_s": 0.041
+    },
+    "ed_e01_3072_js_forge": {
+      "seconds": 799.366,
+      "finished_utc": "20261117T054059Z",
+      "max_rss_kb": 116340,
+      "user_cpu_s": 815.326,
+      "sys_cpu_s": 0.184
+    },
+    "ed_e01_3072_py_cryptography": {
+      "seconds": 17.057,
+      "finished_utc": "20261117T054116Z",
+      "max_rss_kb": 24664,
+      "user_cpu_s": 17.54,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_3072_py_pycryptodome": {
+      "seconds": 36.021,
+      "finished_utc": "20261117T054153Z",
+      "max_rss_kb": 20888,
+      "user_cpu_s": 36.752,
+      "sys_cpu_s": 0.041
+    },
+    "ed_e01_3072_rust_openssl": {
+      "seconds": 16.899,
+      "finished_utc": "20261117T054211Z",
+      "max_rss_kb": 6668,
+      "user_cpu_s": 17.072,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_3072_rust_rustcrypto": {
+      "seconds": 47.823,
+      "finished_utc": "20261117T054259Z",
+      "max_rss_kb": 3088,
+      "user_cpu_s": 49.048,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e01_3072_c_libgcrypt_raw": {
+      "seconds": 135.143,
+      "finished_utc": "20261117T054518Z",
+      "max_rss_kb": 3324,
+      "user_cpu_s": 138.07,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e01_4096_c_openssl": {
+      "seconds": 37.215,
+      "finished_utc": "20261117T054556Z",
+      "max_rss_kb": 6368,
+      "user_cpu_s": 38.067,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e01_4096_c_libgcrypt": {
+      "seconds": 264.317,
+      "finished_utc": "20261117T055026Z",
+      "max_rss_kb": 3312,
+      "user_cpu_s": 269.997,
+      "sys_cpu_s": 0.082
+    },
+    "ed_e01_4096_cpp_botan": {
+      "seconds": 69.736,
+      "finished_utc": "20261117T055137Z",
+      "max_rss_kb": 11724,
+      "user_cpu_s": 71.018,
+      "sys_cpu_s": 0.245
+    },
+    "ed_e01_4096_cpp_cryptopp": {
+      "seconds": 59.765,
+      "finished_utc": "20261117T055238Z",
+      "max_rss_kb": 7588,
+      "user_cpu_s": 60.905,
+      "sys_cpu_s": 0.123
+    },
+    "ed_e01_4096_java_bouncycastle": {
+      "seconds": 69.836,
+      "finished_utc": "20261117T055349Z",
+      "max_rss_kb": 118296,
+      "user_cpu_s": 71.15,
+      "sys_cpu_s": 0.143
+    },
+    "ed_e01_4096_java_jca": {
+      "seconds": 68.245,
+      "finished_utc": "20261117T055459Z",
+      "max_rss_kb": 144656,
+      "user_cpu_s": 69.624,
+      "sys_cpu_s": 0.123
+    },
+    "ed_e01_4096_js_crypto": {
+      "seconds": 53.837,
+      "finished_utc": "20261117T055554Z",
+      "max_rss_kb": 55768,
+      "user_cpu_s": 54.976,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e01_4096_js_forge": {
+      "seconds": 1814.846,
+      "finished_utc": "20261117T062649Z",
+      "max_rss_kb": 117544,
+      "user_cpu_s": 1854.873,
+      "sys_cpu_s": 0.317
+    },
+    "ed_e01_4096_py_cryptography": {
+      "seconds": 37.728,
+      "finished_utc": "20261117T062728Z",
+      "max_rss_kb": 24472,
+      "user_cpu_s": 38.632,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e01_4096_py_pycryptodome": {
+      "seconds": 68.444,
+      "finished_utc": "20261117T062838Z",
+      "max_rss_kb": 20824,
+      "user_cpu_s": 70.01,
+      "sys_cpu_s": 0.041
+    },
+    "ed_e01_4096_rust_openssl": {
+      "seconds": 37.057,
+      "finished_utc": "20261117T062916Z",
+      "max_rss_kb": 6724,
+      "user_cpu_s": 37.936,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_4096_rust_rustcrypto": {
+      "seconds": 105.151,
+      "finished_utc": "20261117T063104Z",
+      "max_rss_kb": 3088,
+      "user_cpu_s": 107.672,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e01_4096_c_libgcrypt_raw": {
+      "seconds": 262.798,
+      "finished_utc": "20261117T063533Z",
+      "max_rss_kb": 3348,
+      "user_cpu_s": 269.133,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_2048_c_libgcrypt": {
+      "seconds": 0.066,
+      "finished_utc": "20261117T063533Z",
+      "max_rss_kb": 3232,
+      "user_cpu_s": 0.065,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_2048_cpp_botan": {
+      "seconds": 0.146,
+      "finished_utc": "20261117T063533Z",
+      "max_rss_kb": 9732,
+      "user_cpu_s": 0.127,
+      "sys_cpu_s": 0.019
+    },
+    "kg_e02_2048_cpp_cryptopp": {
+      "seconds": 0.027,
+      "finished_utc": "20261117T063533Z",
+      "max_rss_kb": 7192,
+      "user_cpu_s": 0.026,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_2048_java_bouncycastle": {
+      "seconds": 1.395,
+      "finished_utc": "20261117T063535Z",
+      "max_rss_kb": 99096,
+      "user_cpu_s": 1.343,
+      "sys_cpu_s": 0.072
+    },
+    "kg_e02_2048_java_jca": {
+      "seconds": 0.576,
+      "finished_utc": "20261117T063535Z",
+      "max_rss_kb": 64512,
+      "user_cpu_s": 0.539,
+      "sys_cpu_s": 0.021
+    },
+    "kg_e02_2048_js_crypto": {
+      "seconds": 0.215,
+      "finished_utc": "20261117T063535Z",
+      "max_rss_kb": 43948,
+      "user_cpu_s": 0.191,
+      "sys_cpu_s": 0.019
+    },
+    "kg_e02_2048_js_forge": {
+      "seconds": 0.342,
+      "finished_utc": "20261117T063536Z",
+      "max_rss_kb": 51064,
+      "user_cpu_s": 0.316,
+      "sys_cpu_s": 0.031
+    },
+    "kg_e02_2048_py_cryptography": {
+      "seconds": 0.168,
+      "finished_utc": "20261117T063536Z",
+      "max_rss_kb": 23108,
+      "user_cpu_s": 0.15,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e02_2048_py_pycryptodome": {
+      "seconds": 0.372,
+      "finished_utc": "20261117T063536Z",
+      "max_rss_kb": 19764,
+      "user_cpu_s": 0.359,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e02_2048_rust_openssl": {
+      "seconds": 0.076,
+      "finished_utc": "20261117T063536Z",
+      "max_rss_kb": 6364,
+      "user_cpu_s": 0.076,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_2048_rust_rustcrypto": {
+      "seconds": 0.114,
+      "finished_utc": "20261117T063536Z",
+      "max_rss_kb": 2992,
+      "user_cpu_s": 0.115,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_2048_c_openssl": {
+      "seconds": 0.087,
+      "finished_utc": "20261117T063537Z",
+      "max_rss_kb": 5976,
+      "user_cpu_s": 0.087,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_3072_c_libgcrypt": {
+      "seconds": 0.375,
+      "finished_utc": "20261117T063537Z",
+      "max_rss_kb": 3436,
+      "user_cpu_s": 0.382,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_3072_cpp_botan": {
+      "seconds": 0.144,
+      "finished_utc": "20261117T063537Z",
+      "max_rss_kb": 10208,
+      "user_cpu_s": 0.126,
+      "sys_cpu_s": 0.019
+    },
+    "kg_e02_3072_cpp_cryptopp": {
+      "seconds": 0.131,
+      "finished_utc": "20261117T063537Z",
+      "max_rss_kb": 7292,
+      "user_cpu_s": 0.133,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_3072_java_bouncycastle": {
+      "seconds": 2.299,
+      "finished_utc": "20261117T063540Z",
+      "max_rss_kb": 105836,
+      "user_cpu_s": 2.237,
+      "sys_cpu_s": 0.113
+    },
+    "kg_e02_3072_java_jca": {
+      "seconds": 0.709,
+      "finished_utc": "20261117T063540Z",
+      "max_rss_kb": 74004,
+      "user_cpu_s": 0.664,
+      "sys_cpu_s": 0.031
+    },
+    "kg_e02_3072_js_crypto": {
+      "seconds": 0.269,
+      "finished_utc": "20261117T063541Z",
+      "max_rss_kb": 43820,
+      "user_cpu_s": 0.261,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_3072_js_forge": {
+      "seconds": 0.515,
+      "finished_utc": "20261117T063541Z",
+      "max_rss_kb": 51020,
+      "user_cpu_s": 0.523,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_3072_py_cryptography": {
+      "seconds": 0.478,
+      "finished_utc": "20261117T063542Z",
+      "max_rss_kb": 23124,
+      "user_cpu_s": 0.478,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_3072_py_pycryptodome": {
+      "seconds": 0.661,
+      "finished_utc": "20261117T063542Z",
+      "max_rss_kb": 19776,
+      "user_cpu_s": 0.646,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e02_3072_rust_openssl": {
+      "seconds": 0.698,
+      "finished_utc": "20261117T063543Z",
+      "max_rss_kb": 6316,
+      "user_cpu_s": 0.703,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_3072_rust_rustcrypto": {
+      "seconds": 0.187,
+      "finished_utc": "20261117T063543Z",
+      "max_rss_kb": 3012,
+      "user_cpu_s": 0.189,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_3072_c_openssl": {
+      "seconds": 0.343,
+      "finished_utc": "20261117T063543Z",
+      "max_rss_kb": 5984,
+      "user_cpu_s": 0.35,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_c_libgcrypt": {
+      "seconds": 0.62,
+      "finished_utc": "20261117T063544Z",
+      "max_rss_kb": 3280,
+      "user_cpu_s": 0.623,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_4096_cpp_botan": {
+      "seconds": 0.619,
+      "finished_utc": "20261117T063545Z",
+      "max_rss_kb": 10012,
+      "user_cpu_s": 0.621,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_4096_cpp_cryptopp": {
+      "seconds": 0.339,
+      "finished_utc": "20261117T063545Z",
+      "max_rss_kb": 7292,
+      "user_cpu_s": 0.344,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_java_bouncycastle": {
+      "seconds": 2.786,
+      "finished_utc": "20261117T063548Z",
+      "max_rss_kb": 105900,
+      "user_cpu_s": 2.718,
+      "sys_cpu_s": 0.103
+    },
+    "kg_e02_4096_java_jca": {
+      "seconds": 1.873,
+      "finished_utc": "20261117T063550Z",
+      "max_rss_kb": 89912,
+      "user_cpu_s": 1.855,
+      "sys_cpu_s": 0.031
+    },
+    "kg_e02_4096_js_crypto": {
+      "seconds": 0.768,
+      "finished_utc": "20261117T063551Z",
+      "max_rss_kb": 43760,
+      "user_cpu_s": 0.775,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_js_forge": {
+      "seconds": 0.568,
+      "finished_utc": "20261117T063552Z",
+      "max_rss_kb": 51272,
+      "user_cpu_s": 0.567,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_4096_py_cryptography": {
+      "seconds": 0.524,
+      "finished_utc": "20261117T063552Z",
+      "max_rss_kb": 22992,
+      "user_cpu_s": 0.524,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e02_4096_py_pycryptodome": {
+      "seconds": 3.214,
+      "finished_utc": "20261117T063556Z",
+      "max_rss_kb": 19764,
+      "user_cpu_s": 3.288,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_rust_openssl": {
+      "seconds": 1.518,
+      "finished_utc": "20261117T063557Z",
+      "max_rss_kb": 6372,
+      "user_cpu_s": 1.552,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_rust_rustcrypto": {
+      "seconds": 1.723,
+      "finished_utc": "20261117T063559Z",
+      "max_rss_kb": 2920,
+      "user_cpu_s": 1.762,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e02_4096_c_openssl": {
+      "seconds": 1.176,
+      "finished_utc": "20261117T063600Z",
+      "max_rss_kb": 5952,
+      "user_cpu_s": 1.202,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_2048_c_libgcrypt": {
+      "seconds": 55.507,
+      "finished_utc": "20261117T063657Z",
+      "max_rss_kb": 3300,
+      "user_cpu_s": 56.603,
+      "sys_cpu_s": 0.184
+    },
+    "ed_e02_2048_cpp_botan": {
+      "seconds": 12.237,
+      "finished_utc": "20261117T063709Z",
+      "max_rss_kb": 11592,
+      "user_cpu_s": 12.362,
+      "sys_cpu_s": 0.164
+    },
+    "ed_e02_2048_cpp_cryptopp": {
+      "seconds": 9.815,
+      "finished_utc": "20261117T063719Z",
+      "max_rss_kb": 7540,
+      "user_cpu_s": 9.958,
+      "sys_cpu_s": 0.092
+    },
+    "ed_e02_2048_java_bouncycastle": {
+      "seconds": 13.143,
+      "finished_utc": "20261117T063733Z",
+      "max_rss_kb": 121316,
+      "user_cpu_s": 13.282,
+      "sys_cpu_s": 0.154
+    },
+    "ed_e02_2048_java_jca": {
+      "seconds": 11.476,
+      "finished_utc": "20261117T063744Z",
+      "max_rss_kb": 111248,
+      "user_cpu_s": 11.682,
+      "sys_cpu_s": 0.061
+    },
+    "ed_e02_2048_js_crypto": {
+      "seconds": 15.057,
+      "finished_utc": "20261117T063800Z",
+      "max_rss_kb": 54996,
+      "user_cpu_s": 15.387,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e02_2048_js_forge": {
+      "seconds": 272.065,
+      "finished_utc": "20261117T064239Z",
+      "max_rss_kb": 119160,
+      "user_cpu_s": 278.382,
+      "sys_cpu_s": 0.154
+    },
+    "ed_e02_2048_py_cryptography": {
+      "seconds": 5.986,
+      "finished_utc": "20261117T064245Z",
+      "max_rss_kb": 24252,
+      "user_cpu_s": 6.132,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_2048_py_pycryptodome": {
+      "seconds": 16.637,
+      "finished_utc": "20261117T064302Z",
+      "max_rss_kb": 20844,
+      "user_cpu_s": 16.974,
+      "sys_cpu_s": 0.072
+    },
+    "ed_e02_2048_rust_openssl": {
+      "seconds": 5.704,
+      "finished_utc": "20261117T064308Z",
+      "max_rss_kb": 6716,
+      "user_cpu_s": 5.783,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_2048_rust_rustcrypto": {
+      "seconds": 16.351,
+      "finished_utc": "20261117T064324Z",
+      "max_rss_kb": 3072,
+      "user_cpu_s": 16.816,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_2048_c_libgcrypt_raw": {
+      "seconds": 54.699,
+      "finished_utc": "20261117T064420Z",
+      "max_rss_kb": 3204,
+      "user_cpu_s": 55.971,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_2048_c_openssl": {
+      "seconds": 5.711,
+      "finished_utc": "20261117T064426Z",
+      "max_rss_kb": 6428,
+      "user_cpu_s": 5.828,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e02_3072_c_libgcrypt": {
+      "seconds": 135.942,
+      "finished_utc": "20261117T064645Z",
+      "max_rss_kb": 3392,
+      "user_cpu_s": 139.268,
+      "sys_cpu_s": 0.051
+    },
+    "ed_e02_3072_cpp_botan": {
+      "seconds": 32.636,
+      "finished_utc": "20261117T064719Z",
+      "max_rss_kb": 11680,
+      "user_cpu_s": 33.329,
+      "sys_cpu_s": 0.195
+    },
+    "ed_e02_3072_cpp_cryptopp": {
+      "seconds": 45.809,
+      "finished_utc": "20261117T064806Z",
+      "max_rss_kb": 7712,
+      "user_cpu_s": 46.644,
+      "sys_cpu_s": 0.163
+    },
+    "ed_e02_3072_java_bouncycastle": {
+      "seconds": 34.717,
+      "finished_utc": "20261117T064842Z",
+      "max_rss_kb": 118964,
+      "user_cpu_s": 35.52,
+      "sys_cpu_s": 0.104
+    },
+    "ed_e02_3072_java_jca": {
+      "seconds": 34.546,
+      "finished_utc": "20261117T064917Z",
+      "max_rss_kb": 146296,
+      "user_cpu_s": 35.368,
+      "sys_cpu_s": 0.082
+    },
+    "ed_e02_3072_js_crypto": {
+      "seconds": 30.762,
+      "finished_utc": "20261117T064948Z",
+      "max_rss_kb": 54728,
+      "user_cpu_s": 31.471,
+      "sys_cpu_s": 0.051
+    },
+    "ed_e02_3072_js_forge": {
+      "seconds": 805.692,
+      "finished_utc": "20261117T070334Z",
+      "max_rss_kb": 124688,
+      "user_cpu_s": 824.701,
+      "sys_cpu_s": 0.256
+    },
+    "ed_e02_3072_py_cryptography": {
+      "seconds": 17.131,
+      "finished_utc": "20261117T070351Z",
+      "max_rss_kb": 24268,
+      "user_cpu_s": 17.518,
+      "sys_cpu_s": 0.041
+    },
+    "ed_e02_3072_py_pycryptodome": {
+      "seconds": 36.081,
+      "finished_utc": "20261117T070428Z",
+      "max_rss_kb": 20820,
+      "user_cpu_s": 36.802,
+      "sys_cpu_s": 0.061
+    },
+    "ed_e02_3072_rust_openssl": {
+      "seconds": 16.727,
+      "finished_utc": "20261117T070445Z",
+      "max_rss_kb": 6672,
+      "user_cpu_s": 17.072,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_3072_rust_rustcrypto": {
+      "seconds": 47.995,
+      "finished_utc": "20261117T070534Z",
+      "max_rss_kb": 3172,
+      "user_cpu_s": 49.075,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_3072_c_libgcrypt_raw": {
+      "seconds": 135.294,
+      "finished_utc": "20261117T070753Z",
+      "max_rss_kb": 3368,
+      "user_cpu_s": 138.159,
+      "sys_cpu_s": 0.031
+    },
+    "ed_e02_3072_c_openssl": {
+      "seconds": 16.73,
+      "finished_utc": "20261117T070809Z",
+      "max_rss_kb": 6280,
+      "user_cpu_s": 17.173,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_4096_c_libgcrypt": {
+      "seconds": 265.369,
+      "finished_utc": "20261117T071240Z",
+      "max_rss_kb": 3192,
+      "user_cpu_s": 270.469,
+      "sys_cpu_s": 0.102
+    },
+    "ed_e02_4096_cpp_botan": {
+      "seconds": 69.886,
+      "finished_utc": "20261117T071352Z",
+      "max_rss_kb": 11588,
+      "user_cpu_s": 71.063,
+      "sys_cpu_s": 0.153
+    },
+    "ed_e02_4096_cpp_cryptopp": {
+      "seconds": 59.935,
+      "finished_utc": "20261117T071452Z",
+      "max_rss_kb": 7444,
+      "user_cpu_s": 60.983,
+      "sys_cpu_s": 0.143
+    },
+    "ed_e02_4096_java_bouncycastle": {
+      "seconds": 69.671,
+      "finished_utc": "20261117T071604Z",
+      "max_rss_kb": 117672,
+      "user_cpu_s": 70.853,
+      "sys_cpu_s": 0.112
+    },
+    "ed_e02_4096_java_jca": {
+      "seconds": 68.513,
+      "finished_utc": "20261117T071713Z",
+      "max_rss_kb": 140116,
+      "user_cpu_s": 69.638,
+      "sys_cpu_s": 0.173
+    },
+    "ed_e02_4096_js_crypto": {
+      "seconds": 53.894,
+      "finished_utc": "20261117T071808Z",
+      "max_rss_kb": 55768,
+      "user_cpu_s": 54.861,
+      "sys_cpu_s": 0.061
+    },
+    "ed_e02_4096_js_forge": {
+      "seconds": 1851.259,
+      "finished_utc": "20261117T074922Z",
+      "max_rss_kb": 116356,
+      "user_cpu_s": 1873.004,
+      "sys_cpu_s": 0.324
+    },
+    "ed_e02_4096_py_cryptography": {
+      "seconds": 38.599,
+      "finished_utc": "20261117T075000Z",
+      "max_rss_kb": 24656,
+      "user_cpu_s": 38.574,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e02_4096_py_pycryptodome": {
+      "seconds": 69.96,
+      "finished_utc": "20261117T075110Z",
+      "max_rss_kb": 20876,
+      "user_cpu_s": 69.925,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e02_4096_rust_openssl": {
+      "seconds": 38.111,
+      "finished_utc": "20261117T075148Z",
+      "max_rss_kb": 6768,
+      "user_cpu_s": 38.12,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e02_4096_rust_rustcrypto": {
+      "seconds": 107.832,
+      "finished_utc": "20261117T075336Z",
+      "max_rss_kb": 3192,
+      "user_cpu_s": 107.771,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e02_4096_c_libgcrypt_raw": {
+      "seconds": 269.107,
+      "finished_utc": "20261117T075805Z",
+      "max_rss_kb": 3200,
+      "user_cpu_s": 269.084,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e02_4096_c_openssl": {
+      "seconds": 38.266,
+      "finished_utc": "20261117T075844Z",
+      "max_rss_kb": 6384,
+      "user_cpu_s": 38.279,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_2048_cpp_botan": {
+      "seconds": 0.025,
+      "finished_utc": "20261117T075844Z",
+      "max_rss_kb": 10188,
+      "user_cpu_s": 0.023,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_2048_cpp_cryptopp": {
+      "seconds": 0.027,
+      "finished_utc": "20261117T075844Z",
+      "max_rss_kb": 7280,
+      "user_cpu_s": 0.026,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_2048_java_bouncycastle": {
+      "seconds": 1.741,
+      "finished_utc": "20261117T075845Z",
+      "max_rss_kb": 105640,
+      "user_cpu_s": 1.644,
+      "sys_cpu_s": 0.081
+    },
+    "kg_e03_2048_java_jca": {
+      "seconds": 0.669,
+      "finished_utc": "20261117T075846Z",
+      "max_rss_kb": 70372,
+      "user_cpu_s": 0.611,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e03_2048_js_crypto": {
+      "seconds": 0.123,
+      "finished_utc": "20261117T075846Z",
+      "max_rss_kb": 43872,
+      "user_cpu_s": 0.119,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_2048_js_forge": {
+      "seconds": 0.245,
+      "finished_utc": "20261117T075847Z",
+      "max_rss_kb": 51000,
+      "user_cpu_s": 0.232,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_2048_py_cryptography": {
+      "seconds": 0.156,
+      "finished_utc": "20261117T075847Z",
+      "max_rss_kb": 23176,
+      "user_cpu_s": 0.145,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_2048_py_pycryptodome": {
+      "seconds": 0.498,
+      "finished_utc": "20261117T075847Z",
+      "max_rss_kb": 19760,
+      "user_cpu_s": 0.489,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_2048_rust_openssl": {
+      "seconds": 0.159,
+      "finished_utc": "20261117T075847Z",
+      "max_rss_kb": 6288,
+      "user_cpu_s": 0.159,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_2048_rust_rustcrypto": {
+      "seconds": 0.069,
+      "finished_utc": "20261117T075847Z",
+      "max_rss_kb": 2956,
+      "user_cpu_s": 0.058,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_2048_c_openssl": {
+      "seconds": 0.114,
+      "finished_utc": "20261117T075848Z",
+      "max_rss_kb": 5872,
+      "user_cpu_s": 0.105,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_2048_c_libgcrypt": {
+      "seconds": 0.068,
+      "finished_utc": "20261117T075848Z",
+      "max_rss_kb": 3252,
+      "user_cpu_s": 0.067,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_cpp_botan": {
+      "seconds": 0.174,
+      "finished_utc": "20261117T075848Z",
+      "max_rss_kb": 10208,
+      "user_cpu_s": 0.173,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_cpp_cryptopp": {
+      "seconds": 0.328,
+      "finished_utc": "20261117T075848Z",
+      "max_rss_kb": 7272,
+      "user_cpu_s": 0.328,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_java_bouncycastle": {
+      "seconds": 1.589,
+      "finished_utc": "20261117T075850Z",
+      "max_rss_kb": 100172,
+      "user_cpu_s": 1.512,
+      "sys_cpu_s": 0.08
+    },
+    "kg_e03_3072_java_jca": {
+      "seconds": 1.336,
+      "finished_utc": "20261117T075851Z",
+      "max_rss_kb": 86960,
+      "user_cpu_s": 1.268,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e03_3072_js_crypto": {
+      "seconds": 0.377,
+      "finished_utc": "20261117T075851Z",
+      "max_rss_kb": 43148,
+      "user_cpu_s": 0.375,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_js_forge": {
+      "seconds": 0.795,
+      "finished_utc": "20261117T075852Z",
+      "max_rss_kb": 51076,
+      "user_cpu_s": 0.758,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e03_3072_py_cryptography": {
+      "seconds": 0.619,
+      "finished_utc": "20261117T075853Z",
+      "max_rss_kb": 22880,
+      "user_cpu_s": 0.596,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_3072_py_pycryptodome": {
+      "seconds": 1.342,
+      "finished_utc": "20261117T075854Z",
+      "max_rss_kb": 19752,
+      "user_cpu_s": 1.264,
+      "sys_cpu_s": 0.05
+    },
+    "kg_e03_3072_rust_openssl": {
+      "seconds": 0.61,
+      "finished_utc": "20261117T075855Z",
+      "max_rss_kb": 6344,
+      "user_cpu_s": 0.6,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_rust_rustcrypto": {
+      "seconds": 0.752,
+      "finished_utc": "20261117T075856Z",
+      "max_rss_kb": 3040,
+      "user_cpu_s": 0.742,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_c_openssl": {
+      "seconds": 0.326,
+      "finished_utc": "20261117T075856Z",
+      "max_rss_kb": 5908,
+      "user_cpu_s": 0.321,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_3072_c_libgcrypt": {
+      "seconds": 0.698,
+      "finished_utc": "20261117T075857Z",
+      "max_rss_kb": 3240,
+      "user_cpu_s": 0.69,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_cpp_botan": {
+      "seconds": 0.502,
+      "finished_utc": "20261117T075857Z",
+      "max_rss_kb": 10004,
+      "user_cpu_s": 0.486,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_4096_cpp_cryptopp": {
+      "seconds": 0.928,
+      "finished_utc": "20261117T075858Z",
+      "max_rss_kb": 7276,
+      "user_cpu_s": 0.921,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_java_bouncycastle": {
+      "seconds": 2.551,
+      "finished_utc": "20261117T075901Z",
+      "max_rss_kb": 103068,
+      "user_cpu_s": 2.456,
+      "sys_cpu_s": 0.08
+    },
+    "kg_e03_4096_java_jca": {
+      "seconds": 1.621,
+      "finished_utc": "20261117T075902Z",
+      "max_rss_kb": 90004,
+      "user_cpu_s": 1.559,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e03_4096_js_crypto": {
+      "seconds": 2.414,
+      "finished_utc": "20261117T075905Z",
+      "max_rss_kb": 43684,
+      "user_cpu_s": 2.394,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_4096_js_forge": {
+      "seconds": 1.986,
+      "finished_utc": "20261117T075907Z",
+      "max_rss_kb": 51128,
+      "user_cpu_s": 1.986,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_py_cryptography": {
+      "seconds": 1.112,
+      "finished_utc": "20261117T075908Z",
+      "max_rss_kb": 23128,
+      "user_cpu_s": 1.104,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e03_4096_py_pycryptodome": {
+      "seconds": 10.132,
+      "finished_utc": "20261117T075918Z",
+      "max_rss_kb": 19768,
+      "user_cpu_s": 10.128,
+      "sys_cpu_s": 0.05
+    },
+    "kg_e03_4096_rust_openssl": {
+      "seconds": 1.591,
+      "finished_utc": "20261117T075919Z",
+      "max_rss_kb": 6476,
+      "user_cpu_s": 1.599,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_rust_rustcrypto": {
+      "seconds": 2.785,
+      "finished_utc": "20261117T075922Z",
+      "max_rss_kb": 2896,
+      "user_cpu_s": 2.799,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_c_openssl": {
+      "seconds": 2.289,
+      "finished_utc": "20261117T075925Z",
+      "max_rss_kb": 5828,
+      "user_cpu_s": 2.274,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e03_4096_c_libgcrypt": {
+      "seconds": 1.765,
+      "finished_utc": "20261117T075926Z",
+      "max_rss_kb": 3240,
+      "user_cpu_s": 1.736,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_2048_cpp_botan": {
+      "seconds": 12.615,
+      "finished_utc": "20261117T075939Z",
+      "max_rss_kb": 11384,
+      "user_cpu_s": 12.446,
+      "sys_cpu_s": 0.13
+    },
+    "ed_e03_2048_cpp_cryptopp": {
+      "seconds": 10.01,
+      "finished_utc": "20261117T075949Z",
+      "max_rss_kb": 7660,
+      "user_cpu_s": 9.963,
+      "sys_cpu_s": 0.09
+    },
+    "ed_e03_2048_java_bouncycastle": {
+      "seconds": 13.434,
+      "finished_utc": "20261117T080002Z",
+      "max_rss_kb": 122632,
+      "user_cpu_s": 13.338,
+      "sys_cpu_s": 0.161
+    },
+    "ed_e03_2048_java_jca": {
+      "seconds": 11.877,
+      "finished_utc": "20261117T080014Z",
+      "max_rss_kb": 110916,
+      "user_cpu_s": 11.743,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e03_2048_js_crypto": {
+      "seconds": 15.607,
+      "finished_utc": "20261117T080030Z",
+      "max_rss_kb": 54996,
+      "user_cpu_s": 15.495,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e03_2048_js_forge": {
+      "seconds": 275.783,
+      "finished_utc": "20261117T080506Z",
+      "max_rss_kb": 116124,
+      "user_cpu_s": 275.485,
+      "sys_cpu_s": 0.23
+    },
+    "ed_e03_2048_py_cryptography": {
+      "seconds": 6.1,
+      "finished_utc": "20261117T080512Z",
+      "max_rss_kb": 24560,
+      "user_cpu_s": 6.121,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_2048_py_pycryptodome": {
+      "seconds": 17.137,
+      "finished_utc": "20261117T080529Z",
+      "max_rss_kb": 20716,
+      "user_cpu_s": 17.04,
+      "sys_cpu_s": 0.05
+    },
+    "ed_e03_2048_rust_openssl": {
+      "seconds": 5.758,
+      "finished_utc": "20261117T080535Z",
+      "max_rss_kb": 6784,
+      "user_cpu_s": 5.741,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e03_2048_rust_rustcrypto": {
+      "seconds": 16.768,
+      "finished_utc": "20261117T080551Z",
+      "max_rss_kb": 3284,
+      "user_cpu_s": 16.812,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_2048_c_libgcrypt_raw": {
+      "seconds": 55.895,
+      "finished_utc": "20261117T080647Z",
+      "max_rss_kb": 3292,
+      "user_cpu_s": 55.864,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e03_2048_c_openssl": {
+      "seconds": 5.827,
+      "finished_utc": "20261117T080653Z",
+      "max_rss_kb": 6344,
+      "user_cpu_s": 5.849,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_2048_c_libgcrypt": {
+      "seconds": 56.708,
+      "finished_utc": "20261117T080750Z",
+      "max_rss_kb": 3300,
+      "user_cpu_s": 56.621,
+      "sys_cpu_s": 0.05
+    },
+    "ed_e03_3072_cpp_botan": {
+      "seconds": 33.374,
+      "finished_utc": "20261117T080823Z",
+      "max_rss_kb": 11524,
+      "user_cpu_s": 33.186,
+      "sys_cpu_s": 0.2
+    },
+    "ed_e03_3072_cpp_cryptopp": {
+      "seconds": 46.773,
+      "finished_utc": "20261117T080910Z",
+      "max_rss_kb": 7600,
+      "user_cpu_s": 46.633,
+      "sys_cpu_s": 0.11
+    },
+    "ed_e03_3072_java_bouncycastle": {
+      "seconds": 35.526,
+      "finished_utc": "20261117T080946Z",
+      "max_rss_kb": 123636,
+      "user_cpu_s": 35.344,
+      "sys_cpu_s": 0.16
+    },
+    "ed_e03_3072_java_jca": {
+      "seconds": 34.683,
+      "finished_utc": "20261117T081020Z",
+      "max_rss_kb": 146016,
+      "user_cpu_s": 34.525,
+      "sys_cpu_s": 0.14
+    },
+    "ed_e03_3072_js_crypto": {
+      "seconds": 30.301,
+      "finished_utc": "20261117T081051Z",
+      "max_rss_kb": 52736,
+      "user_cpu_s": 30.266,
+      "sys_cpu_s": 0.03
+    },
+    "ed_e03_3072_js_forge": {
+      "seconds": 825.706,
+      "finished_utc": "20261117T082436Z",
+      "max_rss_kb": 117612,
+      "user_cpu_s": 825.461,
+      "sys_cpu_s": 0.23
+    },
+    "ed_e03_3072_py_cryptography": {
+      "seconds": 17.607,
+      "finished_utc": "20261117T082454Z",
+      "max_rss_kb": 24648,
+      "user_cpu_s": 17.515,
+      "sys_cpu_s": 0.05
+    },
+    "ed_e03_3072_py_pycryptodome": {
+      "seconds": 36.828,
+      "finished_utc": "20261117T082531Z",
+      "max_rss_kb": 20976,
+      "user_cpu_s": 36.793,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e03_3072_rust_openssl": {
+      "seconds": 17.061,
+      "finished_utc": "20261117T082548Z",
+      "max_rss_kb": 6708,
+      "user_cpu_s": 17.073,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_3072_rust_rustcrypto": {
+      "seconds": 48.973,
+      "finished_utc": "20261117T082637Z",
+      "max_rss_kb": 3168,
+      "user_cpu_s": 48.961,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_3072_c_libgcrypt_raw": {
+      "seconds": 138.199,
+      "finished_utc": "20261117T082855Z",
+      "max_rss_kb": 3312,
+      "user_cpu_s": 138.201,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e03_3072_c_openssl": {
+      "seconds": 17.353,
+      "finished_utc": "20261117T082912Z",
+      "max_rss_kb": 6256,
+      "user_cpu_s": 17.285,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e03_3072_c_libgcrypt": {
+      "seconds": 139.335,
+      "finished_utc": "20261117T083132Z",
+      "max_rss_kb": 3396,
+      "user_cpu_s": 139.298,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e03_4096_cpp_botan": {
+      "seconds": 71.288,
+      "finished_utc": "20261117T083243Z",
+      "max_rss_kb": 11672,
+      "user_cpu_s": 71.108,
+      "sys_cpu_s": 0.2
+    },
+    "ed_e03_4096_cpp_cryptopp": {
+      "seconds": 61.159,
+      "finished_utc": "20261117T083344Z",
+      "max_rss_kb": 7636,
+      "user_cpu_s": 61.002,
+      "sys_cpu_s": 0.14
+    },
+    "ed_e03_4096_java_bouncycastle": {
+      "seconds": 70.92,
+      "finished_utc": "20261117T083455Z",
+      "max_rss_kb": 117724,
+      "user_cpu_s": 70.765,
+      "sys_cpu_s": 0.13
+    },
+    "ed_e03_4096_java_jca": {
+      "seconds": 69.767,
+      "finished_utc": "20261117T083605Z",
+      "max_rss_kb": 145008,
+      "user_cpu_s": 69.595,
+      "sys_cpu_s": 0.13
+    },
+    "ed_e03_4096_js_crypto": {
+      "seconds": 55.004,
+      "finished_utc": "20261117T083700Z",
+      "max_rss_kb": 53904,
+      "user_cpu_s": 54.97,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e03_4096_js_forge": {
+      "seconds": 1869.903,
+      "finished_utc": "20261117T090810Z",
+      "max_rss_kb": 119080,
+      "user_cpu_s": 1869.437,
+      "sys_cpu_s": 0.36
+    },
+    "ed_e03_4096_py_cryptography": {
+      "seconds": 38.716,
+      "finished_utc": "20261117T090848Z",
+      "max_rss_kb": 24452,
+      "user_cpu_s": 38.68,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e03_4096_py_pycryptodome": {
+      "seconds": 69.954,
+      "finished_utc": "20261117T090958Z",
+      "max_rss_kb": 20880,
+      "user_cpu_s": 69.866,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e03_4096_rust_openssl": {
+      "seconds": 38.027,
+      "finished_utc": "20261117T091036Z",
+      "max_rss_kb": 6872,
+      "user_cpu_s": 38.025,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_4096_rust_rustcrypto": {
+      "seconds": 107.96,
+      "finished_utc": "20261117T091224Z",
+      "max_rss_kb": 3032,
+      "user_cpu_s": 107.971,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e03_4096_c_libgcrypt_raw": {
+      "seconds": 270.278,
+      "finished_utc": "20261117T091655Z",
+      "max_rss_kb": 3380,
+      "user_cpu_s": 270.224,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e03_4096_c_openssl": {
+      "seconds": 38.032,
+      "finished_utc": "20261117T091733Z",
+      "max_rss_kb": 6440,
+      "user_cpu_s": 38.028,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e03_4096_c_libgcrypt": {
+      "seconds": 270.352,
+      "finished_utc": "20261117T092203Z",
+      "max_rss_kb": 3128,
+      "user_cpu_s": 270.267,
+      "sys_cpu_s": 0.1
+    },
+    "kg_e04_2048_cpp_cryptopp": {
+      "seconds": 0.073,
+      "finished_utc": "20261117T092203Z",
+      "max_rss_kb": 7020,
+      "user_cpu_s": 0.071,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_java_bouncycastle": {
+      "seconds": 1.348,
+      "finished_utc": "20261117T092205Z",
+      "max_rss_kb": 99040,
+      "user_cpu_s": 1.265,
+      "sys_cpu_s": 0.07
+    },
+    "kg_e04_2048_java_jca": {
+      "seconds": 0.615,
+      "finished_utc": "20261117T092205Z",
+      "max_rss_kb": 66928,
+      "user_cpu_s": 0.547,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e04_2048_js_crypto": {
+      "seconds": 0.331,
+      "finished_utc": "20261117T092205Z",
+      "max_rss_kb": 43772,
+      "user_cpu_s": 0.312,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_2048_js_forge": {
+      "seconds": 0.17,
+      "finished_utc": "20261117T092206Z",
+      "max_rss_kb": 50976,
+      "user_cpu_s": 0.147,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e04_2048_py_cryptography": {
+      "seconds": 0.248,
+      "finished_utc": "20261117T092206Z",
+      "max_rss_kb": 23068,
+      "user_cpu_s": 0.247,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_py_pycryptodome": {
+      "seconds": 0.292,
+      "finished_utc": "20261117T092206Z",
+      "max_rss_kb": 19608,
+      "user_cpu_s": 0.271,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e04_2048_rust_openssl": {
+      "seconds": 0.264,
+      "finished_utc": "20261117T092206Z",
+      "max_rss_kb": 6228,
+      "user_cpu_s": 0.263,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_rust_rustcrypto": {
+      "seconds": 0.095,
+      "finished_utc": "20261117T092207Z",
+      "max_rss_kb": 2988,
+      "user_cpu_s": 0.093,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_c_openssl": {
+      "seconds": 0.171,
+      "finished_utc": "20261117T092207Z",
+      "max_rss_kb": 5804,
+      "user_cpu_s": 0.169,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_c_libgcrypt": {
+      "seconds": 0.076,
+      "finished_utc": "20261117T092207Z",
+      "max_rss_kb": 3340,
+      "user_cpu_s": 0.074,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_2048_cpp_botan": {
+      "seconds": 0.039,
+      "finished_utc": "20261117T092207Z",
+      "max_rss_kb": 10068,
+      "user_cpu_s": 0.038,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_3072_cpp_cryptopp": {
+      "seconds": 0.531,
+      "finished_utc": "20261117T092207Z",
+      "max_rss_kb": 7356,
+      "user_cpu_s": 0.531,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_3072_java_bouncycastle": {
+      "seconds": 2.036,
+      "finished_utc": "20261117T092209Z",
+      "max_rss_kb": 105556,
+      "user_cpu_s": 1.962,
+      "sys_cpu_s": 0.06
+    },
+    "kg_e04_3072_java_jca": {
+      "seconds": 1.816,
+      "finished_utc": "20261117T092211Z",
+      "max_rss_kb": 86648,
+      "user_cpu_s": 1.742,
+      "sys_cpu_s": 0.04
+    },
+    "kg_e04_3072_js_crypto": {
+      "seconds": 0.516,
+      "finished_utc": "20261117T092212Z",
+      "max_rss_kb": 43816,
+      "user_cpu_s": 0.473,
+      "sys_cpu_s": 0.029
+    },
+    "kg_e04_3072_js_forge": {
+      "seconds": 0.196,
+      "finished_utc": "20261117T092212Z",
+      "max_rss_kb": 50996,
+      "user_cpu_s": 0.181,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_3072_py_cryptography": {
+      "seconds": 0.637,
+      "finished_utc": "20261117T092213Z",
+      "max_rss_kb": 22968,
+      "user_cpu_s": 0.62,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_3072_py_pycryptodome": {
+      "seconds": 1.291,
+      "finished_utc": "20261117T092214Z",
+      "max_rss_kb": 19700,
+      "user_cpu_s": 1.26,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e04_3072_rust_openssl": {
+      "seconds": 0.679,
+      "finished_utc": "20261117T092215Z",
+      "max_rss_kb": 6240,
+      "user_cpu_s": 0.663,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_3072_rust_rustcrypto": {
+      "seconds": 0.983,
+      "finished_utc": "20261117T092216Z",
+      "max_rss_kb": 2960,
+      "user_cpu_s": 0.977,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_3072_c_openssl": {
+      "seconds": 0.348,
+      "finished_utc": "20261117T092216Z",
+      "max_rss_kb": 5996,
+      "user_cpu_s": 0.345,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_3072_c_libgcrypt": {
+      "seconds": 0.755,
+      "finished_utc": "20261117T092217Z",
+      "max_rss_kb": 3256,
+      "user_cpu_s": 0.751,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_3072_cpp_botan": {
+      "seconds": 0.742,
+      "finished_utc": "20261117T092217Z",
+      "max_rss_kb": 10208,
+      "user_cpu_s": 0.738,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_4096_cpp_cryptopp": {
+      "seconds": 0.534,
+      "finished_utc": "20261117T092218Z",
+      "max_rss_kb": 7292,
+      "user_cpu_s": 0.531,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_4096_java_bouncycastle": {
+      "seconds": 1.865,
+      "finished_utc": "20261117T092220Z",
+      "max_rss_kb": 105780,
+      "user_cpu_s": 1.772,
+      "sys_cpu_s": 0.06
+    },
+    "kg_e04_4096_java_jca": {
+      "seconds": 1.84,
+      "finished_utc": "20261117T092222Z",
+      "max_rss_kb": 83816,
+      "user_cpu_s": 1.72,
+      "sys_cpu_s": 0.08
+    },
+    "kg_e04_4096_js_crypto": {
+      "seconds": 1.502,
+      "finished_utc": "20261117T092223Z",
+      "max_rss_kb": 43960,
+      "user_cpu_s": 1.475,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e04_4096_js_forge": {
+      "seconds": 0.603,
+      "finished_utc": "20261117T092224Z",
+      "max_rss_kb": 51296,
+      "user_cpu_s": 0.589,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_4096_py_cryptography": {
+      "seconds": 2.407,
+      "finished_utc": "20261117T092226Z",
+      "max_rss_kb": 23052,
+      "user_cpu_s": 2.377,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e04_4096_py_pycryptodome": {
+      "seconds": 4.935,
+      "finished_utc": "20261117T092231Z",
+      "max_rss_kb": 19684,
+      "user_cpu_s": 4.872,
+      "sys_cpu_s": 0.07
+    },
+    "kg_e04_4096_rust_openssl": {
+      "seconds": 1.171,
+      "finished_utc": "20261117T092232Z",
+      "max_rss_kb": 6248,
+      "user_cpu_s": 1.162,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e04_4096_rust_rustcrypto": {
+      "seconds": 1.864,
+      "finished_utc": "20261117T092234Z",
+      "max_rss_kb": 2908,
+      "user_cpu_s": 1.867,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_4096_c_openssl": {
+      "seconds": 0.946,
+      "finished_utc": "20261117T092235Z",
+      "max_rss_kb": 6052,
+      "user_cpu_s": 0.945,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_4096_c_libgcrypt": {
+      "seconds": 1.195,
+      "finished_utc": "20261117T092236Z",
+      "max_rss_kb": 3444,
+      "user_cpu_s": 1.196,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e04_4096_cpp_botan": {
+      "seconds": 0.412,
+      "finished_utc": "20261117T092237Z",
+      "max_rss_kb": 10076,
+      "user_cpu_s": 0.411,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_2048_cpp_cryptopp": {
+      "seconds": 10.057,
+      "finished_utc": "20261117T092247Z",
+      "max_rss_kb": 7608,
+      "user_cpu_s": 9.97,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e04_2048_java_bouncycastle": {
+      "seconds": 13.69,
+      "finished_utc": "20261117T092301Z",
+      "max_rss_kb": 127456,
+      "user_cpu_s": 13.579,
+      "sys_cpu_s": 0.1
+    },
+    "ed_e04_2048_java_jca": {
+      "seconds": 11.644,
+      "finished_utc": "20261117T092312Z",
+      "max_rss_kb": 107880,
+      "user_cpu_s": 11.646,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_2048_js_crypto": {
+      "seconds": 15.439,
+      "finished_utc": "20261117T092328Z",
+      "max_rss_kb": 53132,
+      "user_cpu_s": 15.367,
+      "sys_cpu_s": 0.03
+    },
+    "ed_e04_2048_js_forge": {
+      "seconds": 275.822,
+      "finished_utc": "20261117T092804Z",
+      "max_rss_kb": 117096,
+      "user_cpu_s": 275.592,
+      "sys_cpu_s": 0.26
+    },
+    "ed_e04_2048_py_cryptography": {
+      "seconds": 6.212,
+      "finished_utc": "20261117T092810Z",
+      "max_rss_kb": 24432,
+      "user_cpu_s": 6.154,
+      "sys_cpu_s": 0.03
+    },
+    "ed_e04_2048_py_pycryptodome": {
+      "seconds": 17.531,
+      "finished_utc": "20261117T092827Z",
+      "max_rss_kb": 20772,
+      "user_cpu_s": 17.433,
+      "sys_cpu_s": 0.08
+    },
+    "ed_e04_2048_rust_openssl": {
+      "seconds": 5.813,
+      "finished_utc": "20261117T092833Z",
+      "max_rss_kb": 6784,
+      "user_cpu_s": 5.826,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_2048_rust_rustcrypto": {
+      "seconds": 17.004,
+      "finished_utc": "20261117T092850Z",
+      "max_rss_kb": 3204,
+      "user_cpu_s": 16.969,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_2048_c_libgcrypt_raw": {
+      "seconds": 56.009,
+      "finished_utc": "20261117T092946Z",
+      "max_rss_kb": 3292,
+      "user_cpu_s": 56.007,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e04_2048_c_openssl": {
+      "seconds": 5.876,
+      "finished_utc": "20261117T092952Z",
+      "max_rss_kb": 6336,
+      "user_cpu_s": 5.861,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_2048_c_libgcrypt": {
+      "seconds": 58.634,
+      "finished_utc": "20261117T093051Z",
+      "max_rss_kb": 3384,
+      "user_cpu_s": 58.574,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e04_2048_cpp_botan": {
+      "seconds": 12.632,
+      "finished_utc": "20261117T093103Z",
+      "max_rss_kb": 11560,
+      "user_cpu_s": 12.411,
+      "sys_cpu_s": 0.21
+    },
+    "ed_e04_3072_cpp_cryptopp": {
+      "seconds": 46.988,
+      "finished_utc": "20261117T093150Z",
+      "max_rss_kb": 7448,
+      "user_cpu_s": 46.86,
+      "sys_cpu_s": 0.16
+    },
+    "ed_e04_3072_java_bouncycastle": {
+      "seconds": 35.903,
+      "finished_utc": "20261117T093226Z",
+      "max_rss_kb": 121740,
+      "user_cpu_s": 35.694,
+      "sys_cpu_s": 0.18
+    },
+    "ed_e04_3072_java_jca": {
+      "seconds": 34.976,
+      "finished_utc": "20261117T093301Z",
+      "max_rss_kb": 145492,
+      "user_cpu_s": 34.825,
+      "sys_cpu_s": 0.13
+    },
+    "ed_e04_3072_js_crypto": {
+      "seconds": 30.553,
+      "finished_utc": "20261117T093332Z",
+      "max_rss_kb": 52872,
+      "user_cpu_s": 30.508,
+      "sys_cpu_s": 0.08
+    },
+    "ed_e04_3072_js_forge": {
+      "seconds": 820.217,
+      "finished_utc": "20261117T094712Z",
+      "max_rss_kb": 118652,
+      "user_cpu_s": 819.858,
+      "sys_cpu_s": 0.26
+    },
+    "ed_e04_3072_py_cryptography": {
+      "seconds": 17.607,
+      "finished_utc": "20261117T094730Z",
+      "max_rss_kb": 24352,
+      "user_cpu_s": 17.598,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_3072_py_pycryptodome": {
+      "seconds": 36.869,
+      "finished_utc": "20261117T094806Z",
+      "max_rss_kb": 20920,
+      "user_cpu_s": 36.815,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e04_3072_rust_openssl": {
+      "seconds": 17.069,
+      "finished_utc": "20261117T094823Z",
+      "max_rss_kb": 6764,
+      "user_cpu_s": 17.064,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_3072_rust_rustcrypto": {
+      "seconds": 49.081,
+      "finished_utc": "20261117T094913Z",
+      "max_rss_kb": 3152,
+      "user_cpu_s": 49.058,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_3072_c_libgcrypt_raw": {
+      "seconds": 138.08,
+      "finished_utc": "20261117T095131Z",
+      "max_rss_kb": 3316,
+      "user_cpu_s": 138.06,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_3072_c_openssl": {
+      "seconds": 17.182,
+      "finished_utc": "20261117T095148Z",
+      "max_rss_kb": 6216,
+      "user_cpu_s": 17.183,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e04_3072_c_libgcrypt": {
+      "seconds": 139.082,
+      "finished_utc": "20261117T095407Z",
+      "max_rss_kb": 3388,
+      "user_cpu_s": 138.975,
+      "sys_cpu_s": 0.08
+    },
+    "ed_e04_3072_cpp_botan": {
+      "seconds": 33.396,
+      "finished_utc": "20261117T095440Z",
+      "max_rss_kb": 11492,
+      "user_cpu_s": 33.223,
+      "sys_cpu_s": 0.17
+    },
+    "ed_e04_4096_cpp_cryptopp": {
+      "seconds": 61.049,
+      "finished_utc": "20261117T095541Z",
+      "max_rss_kb": 7712,
+      "user_cpu_s": 60.906,
+      "sys_cpu_s": 0.14
+    },
+    "ed_e04_4096_java_bouncycastle": {
+      "seconds": 70.814,
+      "finished_utc": "20261117T095652Z",
+      "max_rss_kb": 117288,
+      "user_cpu_s": 70.617,
+      "sys_cpu_s": 0.19
+    },
+    "ed_e04_4096_java_jca": {
+      "seconds": 69.709,
+      "finished_utc": "20261117T095802Z",
+      "max_rss_kb": 139264,
+      "user_cpu_s": 69.67,
+      "sys_cpu_s": 0.11
+    },
+    "ed_e04_4096_js_crypto": {
+      "seconds": 55.069,
+      "finished_utc": "20261117T095857Z",
+      "max_rss_kb": 53596,
+      "user_cpu_s": 54.864,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e04_4096_js_forge": {
+      "seconds": 1848.359,
+      "finished_utc": "20261117T102945Z",
+      "max_rss_kb": 119400,
+      "user_cpu_s": 1848.144,
+      "sys_cpu_s": 0.24
+    },
+    "ed_e04_4096_py_cryptography": {
+      "seconds": 38.687,
+      "finished_utc": "20261117T103024Z",
+      "max_rss_kb": 24568,
+      "user_cpu_s": 38.697,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_4096_py_pycryptodome": {
+      "seconds": 69.982,
+      "finished_utc": "20261117T103134Z",
+      "max_rss_kb": 20860,
+      "user_cpu_s": 69.91,
+      "sys_cpu_s": 0.05
+    },
+    "ed_e04_4096_rust_openssl": {
+      "seconds": 38.05,
+      "finished_utc": "20261117T103212Z",
+      "max_rss_kb": 6724,
+      "user_cpu_s": 38.029,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e04_4096_rust_rustcrypto": {
+      "seconds": 107.84,
+      "finished_utc": "20261117T103400Z",
+      "max_rss_kb": 3136,
+      "user_cpu_s": 107.826,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_4096_c_libgcrypt_raw": {
+      "seconds": 269.449,
+      "finished_utc": "20261117T103829Z",
+      "max_rss_kb": 3292,
+      "user_cpu_s": 269.436,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e04_4096_c_openssl": {
+      "seconds": 38.113,
+      "finished_utc": "20261117T103908Z",
+      "max_rss_kb": 6180,
+      "user_cpu_s": 38.051,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e04_4096_c_libgcrypt": {
+      "seconds": 270.876,
+      "finished_utc": "20261117T104338Z",
+      "max_rss_kb": 3336,
+      "user_cpu_s": 270.785,
+      "sys_cpu_s": 0.08
+    },
+    "ed_e04_4096_cpp_botan": {
+      "seconds": 71.263,
+      "finished_utc": "20261117T104450Z",
+      "max_rss_kb": 11740,
+      "user_cpu_s": 71.108,
+      "sys_cpu_s": 0.16
+    },
+    "kg_e05_2048_java_bouncycastle": {
+      "seconds": 1.724,
+      "finished_utc": "20261117T104451Z",
+      "max_rss_kb": 101528,
+      "user_cpu_s": 1.65,
+      "sys_cpu_s": 0.07
+    },
+    "kg_e05_2048_java_jca": {
+      "seconds": 0.577,
+      "finished_utc": "20261117T104452Z",
+      "max_rss_kb": 69152,
+      "user_cpu_s": 0.483,
+      "sys_cpu_s": 0.06
+    },
+    "kg_e05_2048_js_crypto": {
+      "seconds": 0.135,
+      "finished_utc": "20261117T104452Z",
+      "max_rss_kb": 43800,
+      "user_cpu_s": 0.112,
+      "sys_cpu_s": 0.019
+    },
+    "kg_e05_2048_js_forge": {
+      "seconds": 0.34,
+      "finished_utc": "20261117T104452Z",
+      "max_rss_kb": 53044,
+      "user_cpu_s": 0.326,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_2048_py_cryptography": {
+      "seconds": 0.338,
+      "finished_utc": "20261117T104453Z",
+      "max_rss_kb": 23056,
+      "user_cpu_s": 0.305,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e05_2048_py_pycryptodome": {
+      "seconds": 0.683,
+      "finished_utc": "20261117T104453Z",
+      "max_rss_kb": 19744,
+      "user_cpu_s": 0.68,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_2048_rust_openssl": {
+      "seconds": 0.092,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 6368,
+      "user_cpu_s": 0.09,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_2048_rust_rustcrypto": {
+      "seconds": 0.428,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 3004,
+      "user_cpu_s": 0.411,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_2048_c_openssl": {
+      "seconds": 0.217,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 5992,
+      "user_cpu_s": 0.216,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_2048_c_libgcrypt": {
+      "seconds": 0.113,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 3272,
+      "user_cpu_s": 0.112,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_2048_cpp_botan": {
+      "seconds": 0.055,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 9768,
+      "user_cpu_s": 0.054,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_2048_cpp_cryptopp": {
+      "seconds": 0.033,
+      "finished_utc": "20261117T104454Z",
+      "max_rss_kb": 7064,
+      "user_cpu_s": 0.031,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_java_bouncycastle": {
+      "seconds": 2.435,
+      "finished_utc": "20261117T104457Z",
+      "max_rss_kb": 106236,
+      "user_cpu_s": 2.323,
+      "sys_cpu_s": 0.08
+    },
+    "kg_e05_3072_java_jca": {
+      "seconds": 0.736,
+      "finished_utc": "20261117T104458Z",
+      "max_rss_kb": 74676,
+      "user_cpu_s": 0.675,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e05_3072_js_crypto": {
+      "seconds": 0.728,
+      "finished_utc": "20261117T104458Z",
+      "max_rss_kb": 43916,
+      "user_cpu_s": 0.716,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_js_forge": {
+      "seconds": 0.613,
+      "finished_utc": "20261117T104459Z",
+      "max_rss_kb": 53128,
+      "user_cpu_s": 0.592,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_3072_py_cryptography": {
+      "seconds": 0.173,
+      "finished_utc": "20261117T104459Z",
+      "max_rss_kb": 23404,
+      "user_cpu_s": 0.154,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_3072_py_pycryptodome": {
+      "seconds": 0.882,
+      "finished_utc": "20261117T104500Z",
+      "max_rss_kb": 19608,
+      "user_cpu_s": 0.863,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_3072_rust_openssl": {
+      "seconds": 0.361,
+      "finished_utc": "20261117T104500Z",
+      "max_rss_kb": 6316,
+      "user_cpu_s": 0.356,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_rust_rustcrypto": {
+      "seconds": 0.413,
+      "finished_utc": "20261117T104501Z",
+      "max_rss_kb": 3048,
+      "user_cpu_s": 0.408,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_c_openssl": {
+      "seconds": 0.364,
+      "finished_utc": "20261117T104501Z",
+      "max_rss_kb": 6000,
+      "user_cpu_s": 0.358,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_c_libgcrypt": {
+      "seconds": 0.381,
+      "finished_utc": "20261117T104502Z",
+      "max_rss_kb": 3348,
+      "user_cpu_s": 0.376,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_3072_cpp_botan": {
+      "seconds": 0.08,
+      "finished_utc": "20261117T104502Z",
+      "max_rss_kb": 10084,
+      "user_cpu_s": 0.068,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_3072_cpp_cryptopp": {
+      "seconds": 0.056,
+      "finished_utc": "20261117T104502Z",
+      "max_rss_kb": 7304,
+      "user_cpu_s": 0.044,
+      "sys_cpu_s": 0.009
+    },
+    "kg_e05_4096_java_bouncycastle": {
+      "seconds": 4.209,
+      "finished_utc": "20261117T104506Z",
+      "max_rss_kb": 106972,
+      "user_cpu_s": 4.08,
+      "sys_cpu_s": 0.1
+    },
+    "kg_e05_4096_java_jca": {
+      "seconds": 1.203,
+      "finished_utc": "20261117T104507Z",
+      "max_rss_kb": 85444,
+      "user_cpu_s": 1.148,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e05_4096_js_crypto": {
+      "seconds": 1.159,
+      "finished_utc": "20261117T104508Z",
+      "max_rss_kb": 43824,
+      "user_cpu_s": 1.135,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_4096_js_forge": {
+      "seconds": 2.867,
+      "finished_utc": "20261117T104511Z",
+      "max_rss_kb": 51264,
+      "user_cpu_s": 2.826,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e05_4096_py_cryptography": {
+      "seconds": 1.117,
+      "finished_utc": "20261117T104512Z",
+      "max_rss_kb": 22892,
+      "user_cpu_s": 1.12,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_4096_py_pycryptodome": {
+      "seconds": 2.531,
+      "finished_utc": "20261117T104515Z",
+      "max_rss_kb": 19692,
+      "user_cpu_s": 2.51,
+      "sys_cpu_s": 0.03
+    },
+    "kg_e05_4096_rust_openssl": {
+      "seconds": 0.917,
+      "finished_utc": "20261117T104516Z",
+      "max_rss_kb": 6312,
+      "user_cpu_s": 0.9,
+      "sys_cpu_s": 0.02
+    },
+    "kg_e05_4096_rust_rustcrypto": {
+      "seconds": 1.606,
+      "finished_utc": "20261117T104517Z",
+      "max_rss_kb": 3020,
+      "user_cpu_s": 1.608,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_4096_c_openssl": {
+      "seconds": 0.991,
+      "finished_utc": "20261117T104518Z",
+      "max_rss_kb": 6012,
+      "user_cpu_s": 0.988,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_4096_c_libgcrypt": {
+      "seconds": 2.076,
+      "finished_utc": "20261117T104520Z",
+      "max_rss_kb": 3364,
+      "user_cpu_s": 2.067,
+      "sys_cpu_s": 0.01
+    },
+    "kg_e05_4096_cpp_botan": {
+      "seconds": 0.197,
+      "finished_utc": "20261117T104521Z",
+      "max_rss_kb": 10116,
+      "user_cpu_s": 0.196,
+      "sys_cpu_s": 0.0
+    },
+    "kg_e05_4096_cpp_cryptopp": {
+      "seconds": 0.529,
+      "finished_utc": "20261117T104521Z",
+      "max_rss_kb": 7108,
+      "user_cpu_s": 0.519,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_2048_java_bouncycastle": {
+      "seconds": 12.859,
+      "finished_utc": "20261117T104534Z",
+      "max_rss_kb": 109032,
+      "user_cpu_s": 12.781,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e05_2048_java_jca": {
+      "seconds": 11.643,
+      "finished_utc": "20261117T104546Z",
+      "max_rss_kb": 103648,
+      "user_cpu_s": 11.569,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e05_2048_js_crypto": {
+      "seconds": 15.345,
+      "finished_utc": "20261117T104601Z",
+      "max_rss_kb": 55080,
+      "user_cpu_s": 15.314,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e05_2048_js_forge": {
+      "seconds": 277.068,
+      "finished_utc": "20261117T105038Z",
+      "max_rss_kb": 118480,
+      "user_cpu_s": 276.851,
+      "sys_cpu_s": 0.18
+    },
+    "ed_e05_2048_py_cryptography": {
+      "seconds": 6.122,
+      "finished_utc": "20261117T105044Z",
+      "max_rss_kb": 24428,
+      "user_cpu_s": 6.115,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e05_2048_py_pycryptodome": {
+      "seconds": 17.099,
+      "finished_utc": "20261117T105101Z",
+      "max_rss_kb": 20756,
+      "user_cpu_s": 17.02,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e05_2048_rust_openssl": {
+      "seconds": 5.773,
+      "finished_utc": "20261117T105107Z",
+      "max_rss_kb": 6700,
+      "user_cpu_s": 5.778,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_2048_rust_rustcrypto": {
+      "seconds": 16.988,
+      "finished_utc": "20261117T105124Z",
+      "max_rss_kb": 3072,
+      "user_cpu_s": 17.036,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_2048_c_libgcrypt_raw": {
+      "seconds": 55.921,
+      "finished_utc": "20261117T105220Z",
+      "max_rss_kb": 3188,
+      "user_cpu_s": 55.863,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e05_2048_c_openssl": {
+      "seconds": 5.829,
+      "finished_utc": "20261117T105226Z",
+      "max_rss_kb": 6428,
+      "user_cpu_s": 5.845,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_2048_c_libgcrypt": {
+      "seconds": 56.726,
+      "finished_utc": "20261117T105323Z",
+      "max_rss_kb": 3204,
+      "user_cpu_s": 56.638,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e05_2048_cpp_botan": {
+      "seconds": 12.481,
+      "finished_utc": "20261117T105335Z",
+      "max_rss_kb": 11520,
+      "user_cpu_s": 12.457,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e05_2048_cpp_cryptopp": {
+      "seconds": 10.078,
+      "finished_utc": "20261117T105345Z",
+      "max_rss_kb": 7684,
+      "user_cpu_s": 9.971,
+      "sys_cpu_s": 0.07
+    },
+    "ed_e05_3072_java_bouncycastle": {
+      "seconds": 35.573,
+      "finished_utc": "20261117T105421Z",
+      "max_rss_kb": 118284,
+      "user_cpu_s": 35.42,
+      "sys_cpu_s": 0.15
+    },
+    "ed_e05_3072_java_jca": {
+      "seconds": 34.512,
+      "finished_utc": "20261117T105455Z",
+      "max_rss_kb": 145576,
+      "user_cpu_s": 34.41,
+      "sys_cpu_s": 0.1
+    },
+    "ed_e05_3072_js_crypto": {
+      "seconds": 30.009,
+      "finished_utc": "20261117T105525Z",
+      "max_rss_kb": 52804,
+      "user_cpu_s": 29.954,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e05_3072_js_forge": {
+      "seconds": 821.246,
+      "finished_utc": "20261117T110907Z",
+      "max_rss_kb": 115780,
+      "user_cpu_s": 821.043,
+      "sys_cpu_s": 0.2
+    },
+    "ed_e05_3072_py_cryptography": {
+      "seconds": 17.591,
+      "finished_utc": "20261117T110924Z",
+      "max_rss_kb": 24560,
+      "user_cpu_s": 17.532,
+      "sys_cpu_s": 0.03
+    },
+    "ed_e05_3072_py_pycryptodome": {
+      "seconds": 36.973,
+      "finished_utc": "20261117T111001Z",
+      "max_rss_kb": 20920,
+      "user_cpu_s": 36.909,
+      "sys_cpu_s": 0.06
+    },
+    "ed_e05_3072_rust_openssl": {
+      "seconds": 17.092,
+      "finished_utc": "20261117T111018Z",
+      "max_rss_kb": 6712,
+      "user_cpu_s": 17.075,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_3072_rust_rustcrypto": {
+      "seconds": 48.992,
+      "finished_utc": "20261117T111107Z",
+      "max_rss_kb": 3148,
+      "user_cpu_s": 48.985,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_3072_c_libgcrypt_raw": {
+      "seconds": 137.943,
+      "finished_utc": "20261117T111325Z",
+      "max_rss_kb": 3312,
+      "user_cpu_s": 137.946,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_3072_c_openssl": {
+      "seconds": 17.23,
+      "finished_utc": "20261117T111342Z",
+      "max_rss_kb": 6256,
+      "user_cpu_s": 17.139,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_3072_c_libgcrypt": {
+      "seconds": 138.907,
+      "finished_utc": "20261117T111601Z",
+      "max_rss_kb": 3252,
+      "user_cpu_s": 138.888,
+      "sys_cpu_s": 0.09
+    },
+    "ed_e05_3072_cpp_botan": {
+      "seconds": 35.019,
+      "finished_utc": "20261117T111636Z",
+      "max_rss_kb": 11636,
+      "user_cpu_s": 34.833,
+      "sys_cpu_s": 0.19
+    },
+    "ed_e05_3072_cpp_cryptopp": {
+      "seconds": 47.015,
+      "finished_utc": "20261117T111723Z",
+      "max_rss_kb": 7648,
+      "user_cpu_s": 46.842,
+      "sys_cpu_s": 0.13
+    },
+    "ed_e05_4096_java_bouncycastle": {
+      "seconds": 70.896,
+      "finished_utc": "20261117T111834Z",
+      "max_rss_kb": 117860,
+      "user_cpu_s": 70.782,
+      "sys_cpu_s": 0.11
+    },
+    "ed_e05_4096_java_jca": {
+      "seconds": 69.832,
+      "finished_utc": "20261117T111944Z",
+      "max_rss_kb": 140452,
+      "user_cpu_s": 69.694,
+      "sys_cpu_s": 0.14
+    },
+    "ed_e05_4096_js_crypto": {
+      "seconds": 54.915,
+      "finished_utc": "20261117T112039Z",
+      "max_rss_kb": 53572,
+      "user_cpu_s": 54.84,
+      "sys_cpu_s": 0.04
+    },
+    "ed_e05_4096_js_forge": {
+      "seconds": 1857.038,
+      "finished_utc": "20261117T115136Z",
+      "max_rss_kb": 116272,
+      "user_cpu_s": 1856.711,
+      "sys_cpu_s": 0.34
+    },
+    "ed_e05_4096_py_cryptography": {
+      "seconds": 38.746,
+      "finished_utc": "20261117T115215Z",
+      "max_rss_kb": 24512,
+      "user_cpu_s": 38.681,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_4096_py_pycryptodome": {
+      "seconds": 69.769,
+      "finished_utc": "20261117T115325Z",
+      "max_rss_kb": 21028,
+      "user_cpu_s": 69.67,
+      "sys_cpu_s": 0.08
+    },
+    "ed_e05_4096_rust_openssl": {
+      "seconds": 38.149,
+      "finished_utc": "20261117T115403Z",
+      "max_rss_kb": 6740,
+      "user_cpu_s": 38.146,
+      "sys_cpu_s": 0.01
+    },
+    "ed_e05_4096_rust_rustcrypto": {
+      "seconds": 108.121,
+      "finished_utc": "20261117T115551Z",
+      "max_rss_kb": 3200,
+      "user_cpu_s": 108.157,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_4096_c_libgcrypt_raw": {
+      "seconds": 269.186,
+      "finished_utc": "20261117T120020Z",
+      "max_rss_kb": 3312,
+      "user_cpu_s": 269.139,
+      "sys_cpu_s": 0.0
+    },
+    "ed_e05_4096_c_openssl": {
+      "seconds": 37.937,
+      "finished_utc": "20261117T120058Z",
+      "max_rss_kb": 6096,
+      "user_cpu_s": 38.03,
+      "sys_cpu_s": 0.02
+    },
+    "ed_e05_4096_c_libgcrypt": {
+      "seconds": 270.334,
+      "finished_utc": "20261117T120528Z",
+      "max_rss_kb": 3292,
+      "user_cpu_s": 270.143,
+      "sys_cpu_s": 0.1
+    },
+    "ed_e05_4096_cpp_botan": {
+      "seconds": 71.252,
+      "finished_utc": "20261117T120640Z",
+      "max_rss_kb": 15156,
+      "user_cpu_s": 71.109,
+      "sys_cpu_s": 0.17
+    },
+    "ed_e05_4096_cpp_cryptopp": {
+      "seconds": 61.103,
+      "finished_utc": "20261117T120741Z",
+      "max_rss_kb": 7588,
+      "user_cpu_s": 60.982,
+      "sys_cpu_s": 0.1
+    }
+  },
+  "finished_utc": "20261117T120741Z"
+}

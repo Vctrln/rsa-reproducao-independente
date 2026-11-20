@@ -1,0 +1,48 @@
+{
+  "generator": "openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:<B>; openssl rsa -pubout",
+  "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+  "keys": [
+    {
+      "bits": 2048,
+      "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/2048",
+      "public_exponent": 65537,
+      "modulus_sha256": "2a02a094a24757ff692fab2783010fd50819a4394bdfc67201dd6372916c570e",
+      "files_sha256": {
+        "private.der": "3ca1d425bf6c4a37cac4ccda64e7aba9fea4340185727f365ef770c72b1b2ff2",
+        "private.pem": "5f2b1c394c8a948b8bf56f7a83292a77ec269e21db308c6ca4d80c51c698b6cf",
+        "private.sexp": "7d8e7b56725416d4ff14dc08a59ddc06f5a3f6ff22ca2aa70efe44eb13500b7a",
+        "public.der": "2b247f2dc1da3d300303766af560a1be5d493c485f17402007dc738c34d5cdb4",
+        "public.pem": "f9cc755f176eb15ba3161dbc7b2aba3c5642d5b2d7af520cd14b811486159bcd",
+        "public.sexp": "7a883d348fe4bb4807390c3fabdb78a9fea53eb87a3cd3cc145717e42ed86874"
+      }
+    },
+    {
+      "bits": 3072,
+      "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/3072",
+      "public_exponent": 65537,
+      "modulus_sha256": "ddcb5946255bed1c2347179e3cef9c6775d456ca39e62db3106ec94f8b8d40e3",
+      "files_sha256": {
+        "private.der": "a10ba125af04452f3067a2be47b631540225cdb5a201f89b01338272315a6628",
+        "private.pem": "107aa4af6c3d54a049e76fe2e4d899ae66c7e30933ed4c30dce1375fbc2613d0",
+        "private.sexp": "db2ffe382dd0c8c317fbf58f593754f91d4536bc80f0b306b69fe19733a6e3d8",
+        "public.der": "ffcaf975e362f715913c14b29e99da32ca118299322ad1d0aafeec1e597aafd6",
+        "public.pem": "76d143b8973398c63a2355e70980ac12724b04d422f43fd61d9a57109800e3c9",
+        "public.sexp": "5ec6f305cc9a96cd8913526bb12a81ded47593253662726190cdd18055f04740"
+      }
+    },
+    {
+      "bits": 4096,
+      "dir": "<RAIZ_DO_PROJETO>/results/paper_reproduction/performance/P-20261117T051242Z/keys/4096",
+      "public_exponent": 65537,
+      "modulus_sha256": "f37570b60eb862925f0a509dc99c0d06bebab1ae5c65b05165ab85fa58ebafe1",
+      "files_sha256": {
+        "private.der": "950476e6c59f3cebf03ff4ed621647e6cd9c54035f461beb89244bb369cffbd6",
+        "private.pem": "687287e3f4bdbe79e119679d77342fd9bfb5d508217ac829c5e43482d80b6e8f",
+        "private.sexp": "58322fe638b7562e4134444494d59dbdfac4c552b6950ab927f46fc7c0ccf00b",
+        "public.der": "dbcc5f8d4f8c9bb1c2e902c8f385cd860bc9fccc3e2d2aced3dc9d4ec016b0ac",
+        "public.pem": "51048ef9b23e75aa8e82bf4035cb5b17818d99d1dc78413ca496c0d314192a21",
+        "public.sexp": "53121e2561de12e9faddca5224c8b6b26695d656f2ce9741feefddf8e90b85d5"
+      }
+    }
+  ]
+}

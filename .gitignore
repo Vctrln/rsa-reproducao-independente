@@ -1,0 +1,18 @@
+# Ambiente e dependências baixadas (recriáveis: make setup / make deps)
+.venv/
+paper_repro/vendor/
+paper_repro/build/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Chaves privadas de laboratório: nunca versionar
+results/paper_reproduction/**/keys/*/private.*
+
+# Despejos de memória e núcleos: nunca versionar
+core
+core.*
+*.core
+
+# Coletas preliminares geradas localmente (make smoke)
+results/paper_reproduction/preliminary/

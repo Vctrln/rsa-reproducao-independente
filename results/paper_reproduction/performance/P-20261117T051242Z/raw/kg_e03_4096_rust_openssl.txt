@@ -1,0 +1,3 @@
+meta,{"id":"rust_openssl","language":"Rust","library":"Rust OpenSSL","library_version":"openssl crate 0.10.81 (OpenSSL 3.0.13 30 Jan 2024)","runtime":"rustc","padding":"pkcs1v15"}
+keygen,4096,1,1.586498069e0,65537,4096
+done

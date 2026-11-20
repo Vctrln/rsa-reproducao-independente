@@ -1,0 +1,122 @@
+{
+  "lib": "cpp_botan",
+  "decrypted_ok": true,
+  "alive_before": true,
+  "gcore_seconds": 0.3,
+  "gcore_returncode": 0,
+  "alive_after": true,
+  "dump_bytes": 206583272,
+  "exit_code": 0,
+  "tag": "cpp_botan-r3",
+  "repetition": 3,
+  "lab_key_fingerprint": "6933c497b7bd2bdb",
+  "captured_utc": "20261118T041508Z",
+  "search": {
+    "A_pem_lines": {
+      "found": 14,
+      "total": 26
+    },
+    "B_loaded_key_file_64B": {
+      "file": "private.pem",
+      "found": 15,
+      "total": 26
+    },
+    "C_pkcs8_der": {
+      "full": false,
+      "full_reversed": false,
+      "blocks_found": 15,
+      "blocks_reversed_found": 15,
+      "blocks_total": 76,
+      "longest_consecutive_blocks": 15,
+      "longest_consecutive_blocks_reversed": 15,
+      "small_block_bytes": 8,
+      "small_blocks_found": 32,
+      "small_blocks_reversed_found": 31,
+      "small_blocks_total": 150
+    },
+    "D_components": {
+      "d": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 0,
+        "blocks_le": 0,
+        "blocks_total": 16
+      },
+      "p": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 0,
+        "blocks_le": 0,
+        "blocks_total": 8
+      },
+      "q": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 0,
+        "blocks_le": 0,
+        "blocks_total": 8
+      },
+      "dp": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 0,
+        "blocks_le": 0,
+        "blocks_total": 8
+      },
+      "dq": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 0,
+        "blocks_le": 0,
+        "blocks_total": 8
+      },
+      "qinv": {
+        "full_be": false,
+        "full_le": false,
+        "full_java": false,
+        "full_cpython": false,
+        "blocks_be": 1,
+        "blocks_le": 0,
+        "blocks_total": 8
+      }
+    },
+    "E_published_script_public_key": {
+      "full": false,
+      "full_reversed": false,
+      "blocks_found": 15,
+      "blocks_total": 18
+    }
+  },
+  "control_hits": 0,
+  "recovery": {
+    "performed": true,
+    "structure": {
+      "found": false,
+      "tried": {
+        "der": 0,
+        "pem": 0
+      },
+      "seconds": 0.5
+    },
+    "aligned_factor": {
+      "performed": true,
+      "found": false,
+      "candidates_tested": 6849,
+      "seconds": 0.6
+    },
+    "proved": false,
+    "methods_succeeded": []
+  },
+  "search_seconds": 17.1,
+  "classification": "fragmentos encontrados"
+}

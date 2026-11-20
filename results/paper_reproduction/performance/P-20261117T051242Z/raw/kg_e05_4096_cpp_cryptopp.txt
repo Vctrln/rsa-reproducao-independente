@@ -1,0 +1,3 @@
+meta,{"id":"cpp_cryptopp","language":"C++","library":"Crypto++","library_version":"8.9.0","runtime":"g++ 13.3.0","padding":"oaep-sha1","keygen_public_exponent":17}
+keygen,4096,1,5.241140840e-01,17,4096
+done

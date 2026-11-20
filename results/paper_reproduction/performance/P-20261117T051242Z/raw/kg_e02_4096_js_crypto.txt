@@ -1,0 +1,3 @@
+meta,{"id":"js_crypto","language":"JavaScript","library":"Crypto","library_version":"node 20.19.0 / OpenSSL 3.0.15+quic","runtime":"node v20.19.0","padding":"oaep-sha1"}
+keygen,4096,1,7.392218830e-1,65537,4096
+done

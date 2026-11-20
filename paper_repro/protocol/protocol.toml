@@ -1,0 +1,136 @@
+# =============================================================================
+# PROTOCOLO PUBLICADO — reprodução de Rosa, Campiolo e Batista (SBSeg 2025, WTICG)
+# -----------------------------------------------------------------------------
+# Resultados vão para
+# results/paper_reproduction/ com identificadores próprios (P-*, PM-*).
+#
+# Cada valor abaixo indica a origem:  [artigo §x]  confirmado no texto/figuras;
+# [código]  confirmado só no repositório dos autores (commit 1b3ffe0);
+# [decisão]  não confirmável no artigo nem no código — escolha desta reimplementação.
+# =============================================================================
+
+[protocol]
+id                  = "artigo-sbseg2025"
+message_file        = "message_90B.txt"     # 90 B ASCII [artigo §3.2] — conteúdo original não publicado [decisão]
+key_bits            = [2048, 3072, 4096]    # [artigo §3.2]
+iteration_sets      = [10, 100, 1000, 10000]  # executados nesta ordem [artigo §3.2, código C/JS]
+discard_sets        = [10]                  # medido e gravado, excluído da análise [artigo §3.2]
+executions          = 5                     # média de 5 execuções [artigo §3.2] = Repetitions(5) no C++ [código]
+keygen_per_execution = 1                    # experimento de GERAÇÃO (Figura 2), independente: 1 geração por processo,
+                                            # 5 execuções -> 5 amostras por (biblioteca, chave); = Iterations(1)->Repetitions(5)
+                                            # do Google Benchmark dos autores [código]. As unidades de cifração/decifração
+                                            # NÃO geram chave (usam as pré-geradas) [artigo §3.2]
+key_source          = "openssl-genpkey"     # chaves pré-geradas com OpenSSL e carregadas [artigo §3.2, README dos autores]
+public_exponent     = 65537                 # padrão do `openssl genpkey` (chaves carregadas)
+cpu_core            = 1                     # um único núcleo [artigo §3.2] — via taskset [decisão]
+warmup_ops          = 0                     # sem aquecimento explícito — o conjunto de 10 (descartado) vem antes [decisão]
+timer               = "monotonic-per-operation"  # [decisão]
+library_order       = "rotate"              # ordem das bibliotecas gira a cada execução [decisão]
+
+# -----------------------------------------------------------------------------
+# As 12 bibliotecas (Tabela 1 do artigo). `padding` = parâmetro efetivamente usado.
+# `code_padding` = o que o código dos autores faz (o preenchimento declarado no artigo está na Tabela 2 dele).
+# -----------------------------------------------------------------------------
+[libraries.c_openssl]
+keygen_e = 65537
+language = "C"
+name = "OpenSSL"
+padding = "pkcs1v15"
+code_padding = "PKCS#1 v1.5 (padrão do EVP_PKEY_encrypt)"
+[libraries.c_libgcrypt]
+keygen_e = 65537
+language = "C"
+name = "Libgcrypt"
+padding = "oaep-sha1"
+code_padding = "raw (load/main.c) / pkcs1 (api/main.c)"
+[libraries.cpp_botan]
+keygen_e = 65537
+language = "C++"
+name = "Botan"
+padding = "oaep-sha256"
+code_padding = "OAEP(SHA-256)"
+[libraries.cpp_cryptopp]
+keygen_e = 17                          # padrão do Crypto++; o artigo cita (§4.2)
+language = "C++"
+name = "Crypto++"
+padding = "oaep-sha1"
+code_padding = "RSAES_OAEP_SHA (SHA-1)"
+[libraries.java_bouncycastle]
+keygen_e = 65537
+language = "Java"
+name = "Bouncy Castle"
+padding = "raw"
+code_padding = "RSAEngine sem preenchimento"
+[libraries.java_jca]
+keygen_e = 65537
+language = "Java"
+name = "Java Crypto"
+padding = "pkcs1v15"
+code_padding = "Cipher.getInstance(\"RSA\") = RSA/ECB/PKCS1Padding"
+[libraries.js_crypto]
+keygen_e = 65537
+language = "JavaScript"
+name = "Crypto"
+padding = "oaep-sha1"
+code_padding = "crypto.publicEncrypt padrão (OAEP, SHA-1)"
+[libraries.js_forge]
+keygen_e = 65537
+language = "JavaScript"
+name = "Forge"
+padding = "oaep-sha256"
+code_padding = "RSA-OAEP, md SHA-256 (MGF1 SHA-256 por padrão)"
+[libraries.py_cryptography]
+keygen_e = 65537
+language = "Python"
+name = "Cryptography"
+padding = "oaep-sha256"
+code_padding = "OAEP SHA-256, MGF1 SHA-256"
+[libraries.py_pycryptodome]
+keygen_e = 65537
+language = "Python"
+name = "PyCryptodome"
+padding = "oaep-sha1"
+code_padding = "PKCS1_OAEP padrão (SHA-1)"
+[libraries.rust_openssl]
+keygen_e = 65537
+language = "Rust"
+name = "Rust OpenSSL"
+padding = "pkcs1v15"
+code_padding = "Padding::PKCS1"
+[libraries.rust_rustcrypto]
+keygen_e = 65537
+language = "Rust"
+name = "Rust Crypto"
+padding = "pkcs1v15"
+code_padding = "Pkcs1v15Encrypt"
+
+# -----------------------------------------------------------------------------
+# Variante suplementar (NUNCA entra na comparação principal com as Figuras 2–4):
+# quantifica a divergência artigo × código no Libgcrypt.
+# -----------------------------------------------------------------------------
+[variants.c_libgcrypt_raw]
+base = "c_libgcrypt"
+padding = "raw"
+reason = "o código dos autores (load/main.c) cifra com (flags raw), sem preenchimento, o que diverge do preenchimento declarado na Tabela 2 do artigo"
+
+# -----------------------------------------------------------------------------
+# Perfis de coleta. Só `full` reproduz o protocolo; os demais são preliminares.
+# -----------------------------------------------------------------------------
+[profiles.full]
+category = "definitiva"
+[profiles.pilot]
+category       = "preliminar"
+executions     = 1
+iteration_sets = [10, 100]
+[profiles.smoke]
+category       = "preliminar"
+executions     = 1
+key_bits       = [2048]
+iteration_sets = [10, 20]
+
+[memory]
+key_bits     = 2048        # [artigo §3]
+repetitions  = 3           # o artigo não informa repetições da captura; 3 para checar estabilidade [decisão]
+block_bytes  = 16          # [artigo §3.3]
+min_distinct = 6           # blocos com < 6 bytes distintos são ignorados (evita falsos positivos triviais) [decisão]
+small_block_bytes = 8     # blocos menores [artigo §4.3]; o tamanho reduzido não é informado [decisão]

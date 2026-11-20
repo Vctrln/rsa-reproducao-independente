@@ -1,0 +1,24 @@
+[package]
+name = "paper_rust"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Versões: `rsa = "0.9.7"`, `rand = "0.8"` e `openssl = "0.10"` vêm do Cargo.toml dos autores (commit 1b3ffe0);
+# aqui fixadas exatamente (=) e travadas no Cargo.lock.
+[dependencies]
+openssl = "=0.10.81"
+rsa = "=0.9.7"
+rand = "=0.8.5"
+
+[[bin]]
+name = "rust_openssl"
+path = "src/bin/rust_openssl.rs"
+
+[[bin]]
+name = "rust_rustcrypto"
+path = "src/bin/rust_rustcrypto.rs"
+
+# `cargo bench` (usado pelos autores com Criterion) compila com o perfil bench = release, opt-level 3.
+[profile.release]
+opt-level = 3

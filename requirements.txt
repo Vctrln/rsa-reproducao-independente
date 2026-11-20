@@ -1,0 +1,6 @@
+# Versões fixadas. A `cryptography` é instalada com --no-binary (ver `make setup`) para usar o
+# MESMO OpenSSL do sistema que o C e o Rust usam; a wheel pronta embute um OpenSSL próprio.
+# A PyCryptodome 3.21.0 é instalada por `make deps` (paper_repro/tools/fetch_deps.sh).
+cryptography==50.0.1
+matplotlib==3.11.2
+pytest==9.1.1

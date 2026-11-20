@@ -1,0 +1,4920 @@
+{
+  "run_id": "PM-20261118T035712Z",
+  "method_version": 3,
+  "persistence_version": 2,
+  "created_utc": "20261118T035712Z",
+  "status": "complete",
+  "repetitions": 3,
+  "libraries": [
+    "c_openssl",
+    "c_libgcrypt",
+    "cpp_botan",
+    "cpp_cryptopp",
+    "java_bouncycastle",
+    "java_jca",
+    "js_crypto",
+    "js_forge",
+    "py_cryptography",
+    "py_pycryptodome",
+    "rust_openssl",
+    "rust_rustcrypto"
+  ],
+  "plan": [
+    {
+      "tag": "c_openssl-r1",
+      "lib": "c_openssl",
+      "repetition": 1
+    },
+    {
+      "tag": "c_libgcrypt-r1",
+      "lib": "c_libgcrypt",
+      "repetition": 1
+    },
+    {
+      "tag": "cpp_botan-r1",
+      "lib": "cpp_botan",
+      "repetition": 1
+    },
+    {
+      "tag": "cpp_cryptopp-r1",
+      "lib": "cpp_cryptopp",
+      "repetition": 1
+    },
+    {
+      "tag": "java_bouncycastle-r1",
+      "lib": "java_bouncycastle",
+      "repetition": 1
+    },
+    {
+      "tag": "java_jca-r1",
+      "lib": "java_jca",
+      "repetition": 1
+    },
+    {
+      "tag": "js_crypto-r1",
+      "lib": "js_crypto",
+      "repetition": 1
+    },
+    {
+      "tag": "js_forge-r1",
+      "lib": "js_forge",
+      "repetition": 1
+    },
+    {
+      "tag": "py_cryptography-r1",
+      "lib": "py_cryptography",
+      "repetition": 1
+    },
+    {
+      "tag": "py_pycryptodome-r1",
+      "lib": "py_pycryptodome",
+      "repetition": 1
+    },
+    {
+      "tag": "rust_openssl-r1",
+      "lib": "rust_openssl",
+      "repetition": 1
+    },
+    {
+      "tag": "rust_rustcrypto-r1",
+      "lib": "rust_rustcrypto",
+      "repetition": 1
+    },
+    {
+      "tag": "c_libgcrypt-r2",
+      "lib": "c_libgcrypt",
+      "repetition": 2
+    },
+    {
+      "tag": "cpp_botan-r2",
+      "lib": "cpp_botan",
+      "repetition": 2
+    },
+    {
+      "tag": "cpp_cryptopp-r2",
+      "lib": "cpp_cryptopp",
+      "repetition": 2
+    },
+    {
+      "tag": "java_bouncycastle-r2",
+      "lib": "java_bouncycastle",
+      "repetition": 2
+    },
+    {
+      "tag": "java_jca-r2",
+      "lib": "java_jca",
+      "repetition": 2
+    },
+    {
+      "tag": "js_crypto-r2",
+      "lib": "js_crypto",
+      "repetition": 2
+    },
+    {
+      "tag": "js_forge-r2",
+      "lib": "js_forge",
+      "repetition": 2
+    },
+    {
+      "tag": "py_cryptography-r2",
+      "lib": "py_cryptography",
+      "repetition": 2
+    },
+    {
+      "tag": "py_pycryptodome-r2",
+      "lib": "py_pycryptodome",
+      "repetition": 2
+    },
+    {
+      "tag": "rust_openssl-r2",
+      "lib": "rust_openssl",
+      "repetition": 2
+    },
+    {
+      "tag": "rust_rustcrypto-r2",
+      "lib": "rust_rustcrypto",
+      "repetition": 2
+    },
+    {
+      "tag": "c_openssl-r2",
+      "lib": "c_openssl",
+      "repetition": 2
+    },
+    {
+      "tag": "cpp_botan-r3",
+      "lib": "cpp_botan",
+      "repetition": 3
+    },
+    {
+      "tag": "cpp_cryptopp-r3",
+      "lib": "cpp_cryptopp",
+      "repetition": 3
+    },
+    {
+      "tag": "java_bouncycastle-r3",
+      "lib": "java_bouncycastle",
+      "repetition": 3
+    },
+    {
+      "tag": "java_jca-r3",
+      "lib": "java_jca",
+      "repetition": 3
+    },
+    {
+      "tag": "js_crypto-r3",
+      "lib": "js_crypto",
+      "repetition": 3
+    },
+    {
+      "tag": "js_forge-r3",
+      "lib": "js_forge",
+      "repetition": 3
+    },
+    {
+      "tag": "py_cryptography-r3",
+      "lib": "py_cryptography",
+      "repetition": 3
+    },
+    {
+      "tag": "py_pycryptodome-r3",
+      "lib": "py_pycryptodome",
+      "repetition": 3
+    },
+    {
+      "tag": "rust_openssl-r3",
+      "lib": "rust_openssl",
+      "repetition": 3
+    },
+    {
+      "tag": "rust_rustcrypto-r3",
+      "lib": "rust_rustcrypto",
+      "repetition": 3
+    },
+    {
+      "tag": "c_openssl-r3",
+      "lib": "c_openssl",
+      "repetition": 3
+    },
+    {
+      "tag": "c_libgcrypt-r3",
+      "lib": "c_libgcrypt",
+      "repetition": 3
+    }
+  ],
+  "block_bytes": 16,
+  "min_distinct": 6,
+  "small_block_bytes": 8,
+  "preflight": {
+    "gcore": "/usr/bin/gcore",
+    "ptrace_scope": "sem Yama (kernel WSL)",
+    "probe": "ok"
+  },
+  "environment": {
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "5.15.167.4-microsoft-standard-WSL2",
+    "machine": "x86_64",
+    "cpu": "AMD Ryzen 7 4800HS with Radeon Graphics",
+    "cpus": 16,
+    "memory": "MemTotal:        7833936 kB",
+    "wsl": true,
+    "cpu_governor": "indisponível",
+    "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "javac": "javac 11.0.33",
+    "java": "openjdk version \"11.0.33\" 2026-10-20",
+    "node": "v20.19.0",
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "python": "3.12.3",
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "pkg-config": {
+      "openssl": "3.0.13",
+      "libgcrypt": "1.10.3",
+      "botan-2": "2.19.3",
+      "libcrypto++": "8.9"
+    },
+    "taskset": "/usr/bin/taskset",
+    "gcore": "/usr/bin/gcore",
+    "vendor_lock": "nodejs 20.19.0 34bc6627675906f8431892630b5e91fc4cc9f1e03ce15e9716025aa551e5c823 (binário; tarball conferido com SHASUMS256.txt)\nnode-forge 1.3.1 sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA== (tarball; conferido com dist.integrity do npm)\nbcprov-jdk18on 1.79 0d81ecc3124536b539bce9aa3fe9621b7f84c9cee371b635a5b31c78b79ab1da (conferido com .sha1 do Maven Central)\npycryptodome 3.21.0 3.21.0 (pip)\n"
+  },
+  "implementations": {
+    "c_openssl": {
+      "id": "c_openssl",
+      "language": "C",
+      "library": "OpenSSL",
+      "library_version": "OpenSSL 3.0.13 30 Jan 2024",
+      "runtime": "gcc 13.3.0",
+      "padding": "pkcs1v15"
+    },
+    "c_libgcrypt": {
+      "id": "c_libgcrypt",
+      "language": "C",
+      "library": "Libgcrypt",
+      "library_version": "1.10.3",
+      "runtime": "gcc 13.3.0",
+      "padding": "oaep-sha1"
+    },
+    "cpp_botan": {
+      "id": "cpp_botan",
+      "language": "C++",
+      "library": "Botan",
+      "library_version": "2.19.3",
+      "runtime": "g++ 13.3.0",
+      "padding": "oaep-sha256"
+    },
+    "cpp_cryptopp": {
+      "id": "cpp_cryptopp",
+      "language": "C++",
+      "library": "Crypto++",
+      "library_version": "8.9.0",
+      "runtime": "g++ 13.3.0",
+      "padding": "oaep-sha1",
+      "keygen_public_exponent": 17
+    },
+    "java_bouncycastle": {
+      "id": "java_bouncycastle",
+      "language": "Java",
+      "library": "Bouncy Castle",
+      "library_version": "1.79",
+      "runtime": "OpenJDK 64-Bit Server VM 11.0.33",
+      "padding": "raw"
+    },
+    "java_jca": {
+      "id": "java_jca",
+      "language": "Java",
+      "library": "Java Crypto",
+      "library_version": "11.0.33 (SunJCE)",
+      "runtime": "OpenJDK 64-Bit Server VM 11.0.33",
+      "padding": "pkcs1v15",
+      "transformation": "RSA"
+    },
+    "js_crypto": {
+      "id": "js_crypto",
+      "language": "JavaScript",
+      "library": "Crypto",
+      "library_version": "node 20.19.0 / OpenSSL 3.0.15+quic",
+      "runtime": "node v20.19.0",
+      "padding": "oaep-sha1"
+    },
+    "js_forge": {
+      "id": "js_forge",
+      "language": "JavaScript",
+      "library": "Forge",
+      "library_version": "node-forge 1.3.1",
+      "runtime": "node v20.19.0",
+      "padding": "oaep-sha256",
+      "keygen_delegates_to": "node:crypto.generateKeyPair"
+    },
+    "py_cryptography": {
+      "id": "py_cryptography",
+      "language": "Python",
+      "library": "Cryptography",
+      "library_version": "50.0.1 (OpenSSL 3.0.13 30 Jan 2024)",
+      "runtime": "CPython 3.12.3",
+      "padding": "oaep-sha256"
+    },
+    "py_pycryptodome": {
+      "id": "py_pycryptodome",
+      "language": "Python",
+      "library": "PyCryptodome",
+      "library_version": "3.21.0",
+      "runtime": "CPython 3.12.3",
+      "padding": "oaep-sha1"
+    },
+    "rust_openssl": {
+      "id": "rust_openssl",
+      "language": "Rust",
+      "library": "Rust OpenSSL",
+      "library_version": "openssl crate 0.10.81 (OpenSSL 3.0.13 30 Jan 2024)",
+      "runtime": "rustc",
+      "padding": "pkcs1v15"
+    },
+    "rust_rustcrypto": {
+      "id": "rust_rustcrypto",
+      "language": "Rust",
+      "library": "Rust Crypto",
+      "library_version": "rsa 0.9.7",
+      "runtime": "rustc",
+      "padding": "pkcs1v15"
+    }
+  },
+  "message": "protocol/message_90B.txt",
+  "keep_dump": false,
+  "no_scan": false,
+  "resumes": [],
+  "lab_keys": {
+    "1": [
+      "282373412ccfa17b"
+    ],
+    "2": [
+      "a984b20e549f6eb3"
+    ],
+    "3": [
+      "6933c497b7bd2bdb"
+    ]
+  },
+  "finished_utc": "20261118T042338Z",
+  "captures": [
+    {
+      "lib": "c_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2067176,
+      "exit_code": 0,
+      "tag": "c_openssl-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T035714Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 6,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 6,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 25,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 5,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 185016,
+          "byte_order": "little",
+          "candidates_tested": 64,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.3,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "c_libgcrypt",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 826968,
+      "exit_code": 0,
+      "tag": "c_libgcrypt-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T035715Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.sexp",
+          "found": 20,
+          "total": 29
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 51,
+          "blocks_reversed_found": 6,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 6,
+          "small_block_bytes": 8,
+          "small_blocks_found": 107,
+          "small_blocks_reversed_found": 13,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 7,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 20832,
+          "byte_order": "big",
+          "candidates_tested": 51,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "cpp_botan",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.3,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 206583272,
+      "exit_code": 0,
+      "tag": "cpp_botan-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T035715Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 15,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 32,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 1,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.5
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 6871,
+          "seconds": 0.6
+        },
+        "proved": false,
+        "methods_succeeded": []
+      },
+      "search_seconds": 18.9,
+      "classification": "fragmentos encontrados"
+    },
+    {
+      "lib": "cpp_cryptopp",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 3080448,
+      "exit_code": 0,
+      "tag": "cpp_cryptopp-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T035734Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.der",
+          "found": 18,
+          "total": 19
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 74,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 74,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 148,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 189920,
+          "byte_order": "little",
+          "candidates_tested": 141,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.4,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_bouncycastle",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.9,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 5229982392,
+      "exit_code": 0,
+      "tag": "java_bouncycastle-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T035737Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 105496792,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 991870,
+          "seconds": 26.8
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 245.4,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_jca",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.8,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 4957527976,
+      "exit_code": 0,
+      "tag": "java_jca-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040150Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 124134728,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 951957,
+          "seconds": 19.2
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 200.8,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_crypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.6,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 660947664,
+      "exit_code": 0,
+      "tag": "js_crypto-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040515Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 3,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 3,
+          "small_block_bytes": 8,
+          "small_blocks_found": 33,
+          "small_blocks_reversed_found": 7,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "PEM (cabeçalho BEGIN)",
+          "offset": 9472952,
+          "tried": {
+            "der": 0,
+            "pem": 1
+          },
+          "seconds": 1.3,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 21649,
+          "seconds": 2.2
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 24.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_forge",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 935227736,
+      "exit_code": 0,
+      "tag": "js_forge-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040541Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 11594376,
+          "tried": {
+            "der": 8,
+            "pem": 0
+          },
+          "seconds": 0.2,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 24964,
+          "seconds": 3.1
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 37.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_cryptography",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 13784960,
+      "exit_code": 0,
+      "tag": "py_cryptography-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040619Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 11,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 30,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 4041248,
+          "byte_order": "little",
+          "candidates_tested": 3263,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 1.9,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_pycryptodome",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 14105920,
+      "exit_code": 0,
+      "tag": "py_pycryptodome-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040621Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 39,
+          "blocks_reversed_found": 58,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 23,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 86,
+          "small_blocks_reversed_found": 122,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 3674184,
+          "byte_order": "little",
+          "candidates_tested": 3496,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 2.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2326016,
+      "exit_code": 0,
+      "tag": "rust_openssl-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040624Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 0,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 9,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 312472,
+          "byte_order": "little",
+          "candidates_tested": 121,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_rustcrypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 871136,
+      "exit_code": 0,
+      "tag": "rust_rustcrypto-r1",
+      "repetition": 1,
+      "lab_key_fingerprint": "282373412ccfa17b",
+      "captured_utc": "20261118T040624Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 32,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 17,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 196248,
+          "byte_order": "little",
+          "candidates_tested": 230,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "c_libgcrypt",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 826968,
+      "exit_code": 0,
+      "tag": "c_libgcrypt-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T040625Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.sexp",
+          "found": 20,
+          "total": 29
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 52,
+          "blocks_reversed_found": 6,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 6,
+          "small_block_bytes": 8,
+          "small_blocks_found": 108,
+          "small_blocks_reversed_found": 13,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 7,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 20832,
+          "byte_order": "big",
+          "candidates_tested": 68,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "cpp_botan",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 206583272,
+      "exit_code": 0,
+      "tag": "cpp_botan-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T040625Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 15,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 33,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 1,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.5
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 6858,
+          "seconds": 0.6
+        },
+        "proved": false,
+        "methods_succeeded": []
+      },
+      "search_seconds": 17.4,
+      "classification": "fragmentos encontrados"
+    },
+    {
+      "lib": "cpp_cryptopp",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 3080448,
+      "exit_code": 0,
+      "tag": "cpp_cryptopp-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T040643Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.der",
+          "found": 1,
+          "total": 19
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 6,
+          "blocks_reversed_found": 66,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 6,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 13,
+          "small_blocks_reversed_found": 138,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 6,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 189920,
+          "byte_order": "little",
+          "candidates_tested": 75,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.4,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_bouncycastle",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.6,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 5298146416,
+      "exit_code": 0,
+      "tag": "java_bouncycastle-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T040646Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 105425040,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 978956,
+          "seconds": 31.7
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 225.9,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_jca",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 4957527976,
+      "exit_code": 0,
+      "tag": "java_jca-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041038Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 124134848,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.5,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 951419,
+          "seconds": 19.3
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 194.5,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_crypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 660947784,
+      "exit_code": 0,
+      "tag": "js_crypto-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041357Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 3,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 3,
+          "small_block_bytes": 8,
+          "small_blocks_found": 33,
+          "small_blocks_reversed_found": 7,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "PEM (cabeçalho BEGIN)",
+          "offset": 9473008,
+          "tried": {
+            "der": 0,
+            "pem": 1
+          },
+          "seconds": 1.3,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 21635,
+          "seconds": 2.2
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 25.8,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_forge",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 935490360,
+      "exit_code": 0,
+      "tag": "js_forge-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041424Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 19917440,
+          "tried": {
+            "der": 8,
+            "pem": 0
+          },
+          "seconds": 0.2,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 24895,
+          "seconds": 3.0
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 36.7,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_cryptography",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 13784960,
+      "exit_code": 0,
+      "tag": "py_cryptography-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041501Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_reversed_found": 66,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 11,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 30,
+          "small_blocks_reversed_found": 138,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 4041248,
+          "byte_order": "little",
+          "candidates_tested": 3221,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 1.9,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_pycryptodome",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 14105920,
+      "exit_code": 0,
+      "tag": "py_pycryptodome-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041504Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 39,
+          "blocks_reversed_found": 58,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 23,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 86,
+          "small_blocks_reversed_found": 122,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 7,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 3674184,
+          "byte_order": "little",
+          "candidates_tested": 3470,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 1.8,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2326016,
+      "exit_code": 0,
+      "tag": "rust_openssl-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041506Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 0,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 10,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 312472,
+          "byte_order": "little",
+          "candidates_tested": 120,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.3,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_rustcrypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 871136,
+      "exit_code": 0,
+      "tag": "rust_rustcrypto-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041506Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 66,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 32,
+          "small_blocks_reversed_found": 138,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 17,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 196248,
+          "byte_order": "little",
+          "candidates_tested": 230,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "c_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2067176,
+      "exit_code": 0,
+      "tag": "c_openssl-r2",
+      "repetition": 2,
+      "lab_key_fingerprint": "a984b20e549f6eb3",
+      "captured_utc": "20261118T041506Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 6,
+          "blocks_reversed_found": 66,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 6,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 25,
+          "small_blocks_reversed_found": 138,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 5,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 185016,
+          "byte_order": "little",
+          "candidates_tested": 60,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "cpp_botan",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.3,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 206583272,
+      "exit_code": 0,
+      "tag": "cpp_botan-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T041508Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 15,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 32,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 1,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.5
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 6849,
+          "seconds": 0.6
+        },
+        "proved": false,
+        "methods_succeeded": []
+      },
+      "search_seconds": 17.1,
+      "classification": "fragmentos encontrados"
+    },
+    {
+      "lib": "cpp_cryptopp",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 3080448,
+      "exit_code": 0,
+      "tag": "cpp_cryptopp-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T041525Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.der",
+          "found": 18,
+          "total": 19
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 74,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 74,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 148,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 189920,
+          "byte_order": "little",
+          "candidates_tested": 127,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.4,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_bouncycastle",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.6,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 5298146416,
+      "exit_code": 0,
+      "tag": "java_bouncycastle-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T041527Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 15,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 31,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 104877840,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 985076,
+          "seconds": 20.6
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 213.5,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "java_jca",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 1.4,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 4957527976,
+      "exit_code": 0,
+      "tag": "java_jca-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T041907Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": true,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 124134904,
+          "tried": {
+            "der": 1,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 945410,
+          "seconds": 18.6
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 192.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_crypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 660947664,
+      "exit_code": 0,
+      "tag": "js_crypto-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042224Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 3,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 3,
+          "small_block_bytes": 8,
+          "small_blocks_found": 33,
+          "small_blocks_reversed_found": 7,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "PEM (cabeçalho BEGIN)",
+          "offset": 9472952,
+          "tried": {
+            "der": 0,
+            "pem": 1
+          },
+          "seconds": 1.3,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 21628,
+          "seconds": 2.2
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 24.6,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "js_forge",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.5,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 935490360,
+      "exit_code": 0,
+      "tag": "js_forge-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042249Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 26,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 26,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 76,
+          "blocks_reversed_found": 0,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 76,
+          "longest_consecutive_blocks_reversed": 0,
+          "small_block_bytes": 8,
+          "small_blocks_found": 150,
+          "small_blocks_reversed_found": 0,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": true,
+          "full_reversed": false,
+          "blocks_found": 18,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": true,
+          "method": "DER (30 82 … 02 01 00)",
+          "offset": 19753448,
+          "tried": {
+            "der": 8,
+            "pem": 0
+          },
+          "seconds": 0.4,
+          "proved": true
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": false,
+          "candidates_tested": 24995,
+          "seconds": 5.3
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "estrutura DER/PEM"
+        ]
+      },
+      "search_seconds": 41.6,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_cryptography",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.2,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 13784960,
+      "exit_code": 0,
+      "tag": "py_cryptography-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042332Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 11,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 30,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 12,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 4041248,
+          "byte_order": "little",
+          "candidates_tested": 3195,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 1.8,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "py_pycryptodome",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 14105920,
+      "exit_code": 0,
+      "tag": "py_pycryptodome-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042334Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 14,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 39,
+          "blocks_reversed_found": 58,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 23,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 86,
+          "small_blocks_reversed_found": 122,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 4,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": true,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 3674184,
+          "byte_order": "little",
+          "candidates_tested": 3487,
+          "seconds": 0.1,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 2.2,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2326016,
+      "exit_code": 0,
+      "tag": "rust_openssl-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042337Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 0,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 9,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 312472,
+          "byte_order": "little",
+          "candidates_tested": 104,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.3,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "rust_rustcrypto",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 871136,
+      "exit_code": 0,
+      "tag": "rust_rustcrypto-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042337Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 15,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 32,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 17,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 196248,
+          "byte_order": "little",
+          "candidates_tested": 230,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "c_openssl",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 2067176,
+      "exit_code": 0,
+      "tag": "c_openssl-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042337Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.pem",
+          "found": 0,
+          "total": 26
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 6,
+          "blocks_reversed_found": 65,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 6,
+          "longest_consecutive_blocks_reversed": 15,
+          "small_block_bytes": 8,
+          "small_blocks_found": 25,
+          "small_blocks_reversed_found": 137,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 5,
+            "blocks_le": 16,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": false,
+            "full_le": true,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 8,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 0,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 185016,
+          "byte_order": "little",
+          "candidates_tested": 43,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.3,
+      "classification": "chave recuperada sem conhecimento prévio"
+    },
+    {
+      "lib": "c_libgcrypt",
+      "decrypted_ok": true,
+      "alive_before": true,
+      "gcore_seconds": 0.1,
+      "gcore_returncode": 0,
+      "alive_after": true,
+      "dump_bytes": 826968,
+      "exit_code": 0,
+      "tag": "c_libgcrypt-r3",
+      "repetition": 3,
+      "lab_key_fingerprint": "6933c497b7bd2bdb",
+      "captured_utc": "20261118T042338Z",
+      "search": {
+        "A_pem_lines": {
+          "found": 0,
+          "total": 26
+        },
+        "B_loaded_key_file_64B": {
+          "file": "private.sexp",
+          "found": 20,
+          "total": 29
+        },
+        "C_pkcs8_der": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 51,
+          "blocks_reversed_found": 6,
+          "blocks_total": 76,
+          "longest_consecutive_blocks": 15,
+          "longest_consecutive_blocks_reversed": 6,
+          "small_block_bytes": 8,
+          "small_blocks_found": 107,
+          "small_blocks_reversed_found": 13,
+          "small_blocks_total": 150
+        },
+        "D_components": {
+          "d": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 16,
+            "blocks_le": 0,
+            "blocks_total": 16
+          },
+          "p": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 7,
+            "blocks_total": 8
+          },
+          "q": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dp": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "dq": {
+            "full_be": false,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 0,
+            "blocks_le": 0,
+            "blocks_total": 8
+          },
+          "qinv": {
+            "full_be": true,
+            "full_le": false,
+            "full_java": false,
+            "full_cpython": false,
+            "blocks_be": 8,
+            "blocks_le": 0,
+            "blocks_total": 8
+          }
+        },
+        "E_published_script_public_key": {
+          "full": false,
+          "full_reversed": false,
+          "blocks_found": 16,
+          "blocks_total": 18
+        }
+      },
+      "control_hits": 0,
+      "recovery": {
+        "performed": true,
+        "structure": {
+          "found": false,
+          "tried": {
+            "der": 0,
+            "pem": 0
+          },
+          "seconds": 0.0
+        },
+        "aligned_factor": {
+          "performed": true,
+          "found": true,
+          "offset": 20832,
+          "byte_order": "big",
+          "candidates_tested": 59,
+          "seconds": 0.0,
+          "proved": true
+        },
+        "proved": true,
+        "methods_succeeded": [
+          "fator alinhado"
+        ]
+      },
+      "search_seconds": 0.1,
+      "classification": "chave recuperada sem conhecimento prévio"
+    }
+  ],
+  "failed_attempts": [],
+  "pending": [],
+  "integrity_problems": [],
+  "progress": "36/36"
+}

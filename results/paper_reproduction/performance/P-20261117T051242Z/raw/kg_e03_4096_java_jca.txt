@@ -1,0 +1,3 @@
+meta,{"id":"java_jca","language":"Java","library":"Java Crypto","library_version":"11.0.33 (SunJCE)","runtime":"OpenJDK 64-Bit Server VM 11.0.33","padding":"pkcs1v15","transformation":"RSA"}
+keygen,4096,1,1.459005405e+00,65537,4096
+done

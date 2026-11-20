@@ -1,0 +1,42 @@
+20261118T035713Z criada: 36 capturas planejadas
+20261118T035713Z início: 0/36 concluídas; 36 pendentes; pid 29303
+20261118T035714Z repetição 1: chave de laboratório 282373412ccfa17b (gerada)
+20261118T035715Z c_openssl-r1: chave recuperada sem conhecimento prévio
+20261118T035715Z c_libgcrypt-r1: chave recuperada sem conhecimento prévio
+20261118T035734Z cpp_botan-r1: fragmentos encontrados
+20261118T035735Z cpp_cryptopp-r1: chave recuperada sem conhecimento prévio
+20261118T040148Z java_bouncycastle-r1: chave recuperada sem conhecimento prévio
+20261118T040515Z java_jca-r1: chave recuperada sem conhecimento prévio
+20261118T040540Z js_crypto-r1: chave recuperada sem conhecimento prévio
+20261118T040619Z js_forge-r1: chave recuperada sem conhecimento prévio
+20261118T040621Z py_cryptography-r1: chave recuperada sem conhecimento prévio
+20261118T040624Z py_pycryptodome-r1: chave recuperada sem conhecimento prévio
+20261118T040624Z rust_openssl-r1: chave recuperada sem conhecimento prévio
+20261118T040624Z rust_rustcrypto-r1: chave recuperada sem conhecimento prévio
+20261118T040625Z repetição 2: chave de laboratório a984b20e549f6eb3 (gerada)
+20261118T040625Z c_libgcrypt-r2: chave recuperada sem conhecimento prévio
+20261118T040643Z cpp_botan-r2: fragmentos encontrados
+20261118T040644Z cpp_cryptopp-r2: chave recuperada sem conhecimento prévio
+20261118T041036Z java_bouncycastle-r2: chave recuperada sem conhecimento prévio
+20261118T041356Z java_jca-r2: chave recuperada sem conhecimento prévio
+20261118T041423Z js_crypto-r2: chave recuperada sem conhecimento prévio
+20261118T041501Z js_forge-r2: chave recuperada sem conhecimento prévio
+20261118T041503Z py_cryptography-r2: chave recuperada sem conhecimento prévio
+20261118T041506Z py_pycryptodome-r2: chave recuperada sem conhecimento prévio
+20261118T041506Z rust_openssl-r2: chave recuperada sem conhecimento prévio
+20261118T041506Z rust_rustcrypto-r2: chave recuperada sem conhecimento prévio
+20261118T041507Z c_openssl-r2: chave recuperada sem conhecimento prévio
+20261118T041507Z repetição 3: chave de laboratório 6933c497b7bd2bdb (gerada)
+20261118T041525Z cpp_botan-r3: fragmentos encontrados
+20261118T041525Z cpp_cryptopp-r3: chave recuperada sem conhecimento prévio
+20261118T041906Z java_bouncycastle-r3: chave recuperada sem conhecimento prévio
+20261118T042223Z java_jca-r3: chave recuperada sem conhecimento prévio
+20261118T042249Z js_crypto-r3: chave recuperada sem conhecimento prévio
+20261118T042332Z js_forge-r3: chave recuperada sem conhecimento prévio
+20261118T042334Z py_cryptography-r3: chave recuperada sem conhecimento prévio
+20261118T042337Z py_pycryptodome-r3: chave recuperada sem conhecimento prévio
+20261118T042337Z rust_openssl-r3: chave recuperada sem conhecimento prévio
+20261118T042337Z rust_rustcrypto-r3: chave recuperada sem conhecimento prévio
+20261118T042338Z c_openssl-r3: chave recuperada sem conhecimento prévio
+20261118T042338Z c_libgcrypt-r3: chave recuperada sem conhecimento prévio
+20261118T042338Z concluída; chaves de laboratório e diretório de trabalho apagados com segurança
